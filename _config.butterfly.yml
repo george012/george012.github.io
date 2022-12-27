@@ -1,0 +1,15 @@
+social:
+  fab fa-github: https://github.com/george012 || Github
+
+algolia_search:
+  enable: true
+  hits:
+    per_page: 5
+
+local_search:
+  enable: true
+  preload: 10
+  CDN:
+
+  # Favicon（網站圖標）
+favicon: /img/favicon.png
