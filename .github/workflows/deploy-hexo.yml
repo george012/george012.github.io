@@ -13,6 +13,8 @@ jobs:
     - name: Use Node.js 18
       uses: actions/setup-node@v3
       with:
+        ejs@^3.1.7:
+          version "3.1.7"
         node-version: '18'
 
     - name: Install Pandoc
