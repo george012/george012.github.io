@@ -5,7 +5,13 @@ on:
       - master
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        #  Node Version
+        version: [18]
+        os: [ubuntu-latest]
+        
+    runs-on: ${{ matrix.os }}
     steps:
     - name: Checkout 🛎️
       uses: actions/checkout@master
@@ -15,7 +21,7 @@ jobs:
       with:
         ejs@^3.1.7:
           version "3.1.7"
-        node-version: '18'
+        node-version: ${{ matrix.version }}
 
     - name: Install Pandoc
       run: |
