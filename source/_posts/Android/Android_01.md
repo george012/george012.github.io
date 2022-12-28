@@ -1,7 +1,7 @@
 ---
 title: Android JNI编译so动态库技巧(Mac环境)
 date: 2016-11-25
-tags: Android,JNI,so,SDK
+type: post
 ---
 
 <font size=20>目录：</font>

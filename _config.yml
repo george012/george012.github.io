@@ -4,8 +4,8 @@
 
 # Site
 title: WMYeah
-subtitle: ''
-description: ''
+subtitle: 风的点滴
+description: 随风逝去
 keywords:
 author: WMYeah
 language: zh-CN
@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: http://www.wmyeah.com
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -97,11 +97,23 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: butterfly
+theme: terminal
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy: 
-  type: git
-  repo: https://github.com/george012/george012.github.io.git
-  branch: main
+  type: 
+  repo: 
+  branch: 
+
+theme_config:
+  menus:
+    Main: /
+    Categories: /categories
+    Tags: /tags
+    About: /about
+  favicon: '/img/favicon.png'
+  footers:
+    '&copy; WMYeah': 'https://www.wmyeah.com'
+  google_analytics:
+    tracking_id: G-XXXXXXXXX

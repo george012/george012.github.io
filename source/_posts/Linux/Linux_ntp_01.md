@@ -1,7 +1,7 @@
 ---
 title: Linux 基操
 date: 2015-03-12 10:06:35
-tags: Linux
+type: post
 ---
 
 <font size=20>目录：</font>
