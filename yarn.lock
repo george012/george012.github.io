@@ -1441,6 +1441,14 @@ hexo-theme-terminal@^1.0.1:
   resolved "https://registry.npmmirror.com/hexo-theme-terminal/-/hexo-theme-terminal-1.0.1.tgz"
   integrity sha512-pmMORnlKkDpXGsBjkRkQT2eZkw1pIEzGEh+dDtW/1qV6NIV5B3GlAhCeQdYXvPEvPLhlGg0vkf951XDnkJ9HOw==
 
+hexo-theme-wmterminal@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmmirror.com/hexo-theme-wmterminal/-/hexo-theme-wmterminal-1.0.1.tgz"
+  integrity sha512-HhsvO3AmYm3L8nb+hv13tLxenbNY6vdaQUS9l/eFsuyjdOP/BOLCEU4dESVUiGgQHRtjK0ah3P0z2dnR9xAarg==
+  dependencies:
+    hexo-renderer-pug "^3.0.0"
+    hexo-renderer-stylus "^2.1.0"
+
 hexo-util@^0.6.3:
   version "0.6.3"
   resolved "https://registry.npmmirror.com/hexo-util/-/hexo-util-0.6.3.tgz"
