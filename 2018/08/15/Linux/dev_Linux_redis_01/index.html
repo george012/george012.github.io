@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+<link rel="stylesheet" href="/styles/base.css">
+
+    
+<link rel="stylesheet" href="/styles/theme.css">
+
+    <link rel="shortcut icon" href="/img/favicon.png">
+    
+    <title>CentOS7.X yum方式安装最新版本Redis - WMYeah</title>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXX');
+    </script>
+    
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="WMYeah" type="application/atom+xml">
+</head>
+<body>
+    <div class="header-title">
+        <span class="header-light"></span>
+        <span class="header-light"></span>
+        <span class="header-light"></span>
+        <span>WMYeah www.wmyeah.com<span>
+    </div>
+    <div class="container">
+        <ul class="nav">
+        
+            <li><a href="/">Main</a></li>
+        
+            <li><a href="/categories">Categories</a></li>
+        
+            <li><a href="/tags">Tags</a></li>
+        
+            <li><a href="/about">About</a></li>
+        
+        </ul>
+        <div class="content">
+            <div class="post-container">
+    <div class="post-header">
+        <span class="ui-tips">Title:</span>
+        <h1 class="ui-keyword post-title">CentOS7.X yum方式安装最新版本Redis</h1>
+        <span class="post-date">2018-08-15</span>
+    </div>
+    
+    
+    <div class="post-header">
+        <span class="ui-tips">Tag:</span>
+        
+        <a href="/tags/Linux/">Linux</a>
+        
+    </div>
+    
+    
+    <div class="post-content"><p><font size=20>目录：</font></p>
+<!-- TOC -->
+
+<ul>
+<li><a href="#1-%E6%9B%B4%E6%96%B0yum%E6%BA%90">1. 更新yum源</a></li>
+<li><a href="#2-%E5%AE%89%E8%A3%85redis-rpm%E6%BA%90">2. 安装redis-rpm源</a></li>
+<li><a href="#3-%E5%AE%89%E8%A3%85redis">3. 安装Redis</a></li>
+<li><a href="#4-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AFredis">4. 开机自启Redis</a></li>
+<li><a href="#5-%E8%AE%BE%E7%BD%AEredisconf">5. 设置redis.conf</a></li>
+<li><a href="#6-ps">6. PS:</a></li>
+</ul>
+<!-- /TOC -->
+
+
+<h1 id="1-更新yum源"><a href="#1-更新yum源" class="headerlink" title="1. 更新yum源"></a>1. 更新yum源</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum update</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="2-安装redis-rpm源"><a href="#2-安装redis-rpm源" class="headerlink" title="2. 安装redis-rpm源"></a>2. 安装redis-rpm源</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="3-安装Redis"><a href="#3-安装Redis" class="headerlink" title="3. 安装Redis"></a>3. 安装Redis</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum --enablerepo=remi install redis</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-开机自启Redis"><a href="#4-开机自启Redis" class="headerlink" title="4. 开机自启Redis"></a>4. 开机自启Redis</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable redis</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-设置redis-conf"><a href="#5-设置redis-conf" class="headerlink" title="5. 设置redis.conf"></a>5. 设置redis.conf</h1><ul>
+<li>bind 127.0.0.1  改为 bind 0.0.0.0(可选)  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/redis.conf</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="6-PS"><a href="#6-PS" class="headerlink" title="6. PS:"></a>6. PS:</h1><ul>
+<li>根据网上资料亲测整理，最终解释权归<a href="http://www.wmyeah.com/">WMYeah</a>所有!</li>
+<li>参考资料:</li>
+</ul>
+<hr>
+</div>
+</div>
+
+        </div>
+        <div class="footer">
+            
+            <p class="footer-links">
+            
+                <a target="_blank" href="https://www.wmyeah.com">&copy; WMYeah</a>
+            
+            </p>
+            
+            <p class="footer-copyright">
+                <span>Powered by <a target="_blank" href="https://hexo.io">Hexo</a></span>
+                <span>Theme <a target="_blank" href="https://github.com/tinkink-co/hexo-theme-terminal">Terminal</a></span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

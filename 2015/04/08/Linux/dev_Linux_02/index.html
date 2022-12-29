@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+<link rel="stylesheet" href="/styles/base.css">
+
+    
+<link rel="stylesheet" href="/styles/theme.css">
+
+    <link rel="shortcut icon" href="/img/favicon.png">
+    
+    <title>Ubuntu 14.0.4搭建LAMP+phpmyadmin Web服务器 - WMYeah</title>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXX');
+    </script>
+    
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="WMYeah" type="application/atom+xml">
+</head>
+<body>
+    <div class="header-title">
+        <span class="header-light"></span>
+        <span class="header-light"></span>
+        <span class="header-light"></span>
+        <span>WMYeah www.wmyeah.com<span>
+    </div>
+    <div class="container">
+        <ul class="nav">
+        
+            <li><a href="/">Main</a></li>
+        
+            <li><a href="/categories">Categories</a></li>
+        
+            <li><a href="/tags">Tags</a></li>
+        
+            <li><a href="/about">About</a></li>
+        
+        </ul>
+        <div class="content">
+            <div class="post-container">
+    <div class="post-header">
+        <span class="ui-tips">Title:</span>
+        <h1 class="ui-keyword post-title">Ubuntu 14.0.4搭建LAMP+phpmyadmin Web服务器</h1>
+        <span class="post-date">2015-04-08</span>
+    </div>
+    
+    
+    <div class="post-header">
+        <span class="ui-tips">Tag:</span>
+        
+        <a href="/tags/Linux/">Linux</a>
+        
+    </div>
+    
+    
+    <div class="post-content"><p><font size=20>目录：</font></p>
+<!-- TOC -->
+
+<ul>
+<li><a href="#1-%E5%AE%89%E8%A3%85mysql-servermysql-client">1. 安装mysql-server、mysql-client</a></li>
+<li><a href="#2-%E5%AE%89%E8%A3%85apache2">2. 安装apache2</a></li>
+<li><a href="#3-%E5%AE%89%E8%A3%85php5-php5-libapache2-mod-php5apache-php5%E6%94%AF%E6%8C%81%E6%A8%A1%E5%9D%97">3. 安装php5 php5 libapache2-mod-php5(apache php5支持模块)</a></li>
+<li><a href="#4-%E5%AE%89%E8%A3%85php5%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97">4. 安装php5常用模块</a></li>
+<li><a href="#5-%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7-phpmyadmin">5. 安装数据库管理工具 phpMyadmin</a></li>
+<li><a href="#6-%E9%87%8D%E5%90%AFapache2">6. 重启apache2</a></li>
+<li><a href="#7-%E8%AE%BF%E9%97%AE%E7%AB%99%E7%82%B9">7. 访问站点:</a></li>
+<li><a href="#8-ps">8. PS:</a></li>
+</ul>
+<!-- /TOC -->
+
+<hr>
+<h1 id="1-安装mysql-server、mysql-client"><a href="#1-安装mysql-server、mysql-client" class="headerlink" title="1. 安装mysql-server、mysql-client"></a>1. 安装mysql-server、mysql-client</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server mysql-client</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-安装apache2"><a href="#2-安装apache2" class="headerlink" title="2. 安装apache2"></a>2. 安装apache2</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install apache2</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-安装php5-php5-libapache2-mod-php5-apache-php5支持模块"><a href="#3-安装php5-php5-libapache2-mod-php5-apache-php5支持模块" class="headerlink" title="3. 安装php5 php5 libapache2-mod-php5(apache php5支持模块)"></a>3. 安装php5 php5 libapache2-mod-php5(apache php5支持模块)</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install php5 libapache2-mod-php5</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-安装php5常用模块"><a href="#4-安装php5常用模块" class="headerlink" title="4. 安装php5常用模块"></a>4. 安装php5常用模块</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get  install php5-mysql php5-curl php5-gd php5-intl php-pear php5-imagick  php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell  php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl```</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-安装数据库管理工具-phpMyadmin"><a href="#5-安装数据库管理工具-phpMyadmin" class="headerlink" title="5. 安装数据库管理工具 phpMyadmin"></a>5. 安装数据库管理工具 phpMyadmin</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install phpmyadmin</span><br></pre></td></tr></table></figure>
+
+<h1 id="6-重启apache2"><a href="#6-重启apache2" class="headerlink" title="6. 重启apache2"></a>6. 重启apache2</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service apache2 restart</span><br></pre></td></tr></table></figure>
+
+<h1 id="7-访问站点"><a href="#7-访问站点" class="headerlink" title="7. 访问站点:"></a>7. 访问站点:</h1><ul>
+<li><p>LocalHost模式:	再浏览器中输入“<a target="_blank" rel="noopener" href="http://127.0.0.1”/">http://127.0.0.1”</a> 或 “<a target="_blank" rel="noopener" href="http://localhost”/">http://localhost”</a> 访问</p>
+</li>
+<li><p>远程模式: 再浏览器中输入“<a target="_blank" rel="noopener" href="http://domain”访问/">http://domain”访问</a> (ps:domain 为 服务器IP地址或者已指向服务器的域名)</p>
+</li>
+</ul>
+<hr>
+<h1 id="8-PS"><a href="#8-PS" class="headerlink" title="8. PS:"></a>8. PS:</h1><ul>
+<li><p>根据网上资料亲测整理，最终解释权归<a href="http://www.wmyeah.com/">WMYeah</a>所有! </p>
+</li>
+<li><p>参考资料:</p>
+<ul>
+<li>1、<a target="_blank" rel="noopener" href="http://www.jianshu.com/p/135697b3ff0d">Linux Ubuntu 14.04安装LAMP（Apache+MySQL+PHP）网站环境</a></li>
+<li>2、<a target="_blank" rel="noopener" href="http://www.linuxidc.com/Linux/2015-03/115136.htm">Ubuntu Server 14.04 安装 LAMP</a></li>
+<li>2、<a target="_blank" rel="noopener" href="http://jingyan.baidu.com/article/ceb9fb10d572d88cad2ba093.html">ubuntu14.04搭建web服务器lamp</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+</div>
+</div>
+
+        </div>
+        <div class="footer">
+            
+            <p class="footer-links">
+            
+                <a target="_blank" href="https://www.wmyeah.com">&copy; WMYeah</a>
+            
+            </p>
+            
+            <p class="footer-copyright">
+                <span>Powered by <a target="_blank" href="https://hexo.io">Hexo</a></span>
+                <span>Theme <a target="_blank" href="https://github.com/tinkink-co/hexo-theme-terminal">Terminal</a></span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

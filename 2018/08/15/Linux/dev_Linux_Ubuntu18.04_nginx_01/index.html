@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+<link rel="stylesheet" href="/styles/base.css">
+
+    
+<link rel="stylesheet" href="/styles/theme.css">
+
+    <link rel="shortcut icon" href="/img/favicon.png">
+    
+    <title>Ubuntu 18.04 安装最新版本 Nginx - WMYeah</title>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXX');
+    </script>
+    
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="WMYeah" type="application/atom+xml">
+</head>
+<body>
+    <div class="header-title">
+        <span class="header-light"></span>
+        <span class="header-light"></span>
+        <span class="header-light"></span>
+        <span>WMYeah www.wmyeah.com<span>
+    </div>
+    <div class="container">
+        <ul class="nav">
+        
+            <li><a href="/">Main</a></li>
+        
+            <li><a href="/categories">Categories</a></li>
+        
+            <li><a href="/tags">Tags</a></li>
+        
+            <li><a href="/about">About</a></li>
+        
+        </ul>
+        <div class="content">
+            <div class="post-container">
+    <div class="post-header">
+        <span class="ui-tips">Title:</span>
+        <h1 class="ui-keyword post-title">Ubuntu 18.04 安装最新版本 Nginx</h1>
+        <span class="post-date">2018-08-15</span>
+    </div>
+    
+    
+    <div class="post-header">
+        <span class="ui-tips">Tag:</span>
+        
+        <a href="/tags/Linux/">Linux</a>
+        
+    </div>
+    
+    
+    <div class="post-content"><!-- TOC -->
+
+<ul>
+<li><a href="#1-%E7%BC%96%E8%BE%91%E6%BA%90">1. 编辑源</a></li>
+<li><a href="#2-%E6%BA%90%E5%86%85%E5%AE%B9">2. 源内容</a></li>
+<li><a href="#3-%E6%B7%BB%E5%8A%A0nginx-%E5%85%AC%E9%92%A5">3. 添加nginx 公钥</a></li>
+<li><a href="#4-%E6%9B%B4%E6%96%B0%E5%B9%B6%E5%AE%89%E8%A3%85">4. 更新并安装</a></li>
+<li><a href="#5-ps">5. PS:</a></li>
+</ul>
+<!-- /TOC -->
+
+<hr>
+<h1 id="1-编辑源"><a href="#1-编辑源" class="headerlink" title="1. 编辑源"></a>1. 编辑源</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim  /etc/apt/sources.list.d/nginx.list</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-源内容"><a href="#2-源内容" class="headerlink" title="2. 源内容"></a>2. 源内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">deb [arch=amd64] http://nginx.org/packages/mainline/ubuntu/ bionic nginx</span><br><span class="line">deb-src http://nginx.org/packages/mainline/ubuntu/ bionic nginx</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-添加nginx-公钥"><a href="#3-添加nginx-公钥" class="headerlink" title="3. 添加nginx 公钥"></a>3. 添加nginx 公钥</h1><ul>
+<li><p>   下载nginx 公钥</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://nginx.org/keys/nginx_signing.key</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>   添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-key add nginx_signing.key</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="4-更新并安装"><a href="#4-更新并安装" class="headerlink" title="4. 更新并安装"></a>4. 更新并安装</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt update</span><br><span class="line">apt install nginx</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="5-PS"><a href="#5-PS" class="headerlink" title="5. PS:"></a>5. PS:</h1><ul>
+<li>根据网上资料亲测整理，最终解释权归<a href="http://www.wmyeah.com/">WMYeah</a>所有!</li>
+</ul>
+<hr>
+</div>
+</div>
+
+        </div>
+        <div class="footer">
+            
+            <p class="footer-links">
+            
+                <a target="_blank" href="https://www.wmyeah.com">&copy; WMYeah</a>
+            
+            </p>
+            
+            <p class="footer-copyright">
+                <span>Powered by <a target="_blank" href="https://hexo.io">Hexo</a></span>
+                <span>Theme <a target="_blank" href="https://github.com/tinkink-co/hexo-theme-terminal">Terminal</a></span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

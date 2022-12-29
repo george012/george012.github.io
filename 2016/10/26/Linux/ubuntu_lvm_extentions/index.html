@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+<link rel="stylesheet" href="/styles/base.css">
+
+    
+<link rel="stylesheet" href="/styles/theme.css">
+
+    <link rel="shortcut icon" href="/img/favicon.png">
+    
+    <title>ubuntu lvm 扩容 - WMYeah</title>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXX');
+    </script>
+    
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="WMYeah" type="application/atom+xml">
+</head>
+<body>
+    <div class="header-title">
+        <span class="header-light"></span>
+        <span class="header-light"></span>
+        <span class="header-light"></span>
+        <span>WMYeah www.wmyeah.com<span>
+    </div>
+    <div class="container">
+        <ul class="nav">
+        
+            <li><a href="/">Main</a></li>
+        
+            <li><a href="/categories">Categories</a></li>
+        
+            <li><a href="/tags">Tags</a></li>
+        
+            <li><a href="/about">About</a></li>
+        
+        </ul>
+        <div class="content">
+            <div class="post-container">
+    <div class="post-header">
+        <span class="ui-tips">Title:</span>
+        <h1 class="ui-keyword post-title">ubuntu lvm 扩容</h1>
+        <span class="post-date">2016-10-26</span>
+    </div>
+    
+    
+    <div class="post-header">
+        <span class="ui-tips">Tag:</span>
+        
+        <a href="/tags/Linux/">Linux</a>
+        
+    </div>
+    
+    
+    <div class="post-content"><!-- TOC -->
+
+<ul>
+<li><a href="#1-ubuntu--lvm-%E6%89%A9%E5%AE%B9">1. ubuntu  lvm 扩容</a></li>
+<li><a href="#2-%E5%86%85%E5%AD%98%E8%99%9A%E6%8B%9F%E7%9B%98">2. 内存虚拟盘</a><ul>
+<li><a href="#21-%E4%B8%B4%E6%97%B6%E6%8C%82%E8%BD%BD">2.1. 临时挂载</a></li>
+<li><a href="#22-%E6%B0%B8%E4%B9%85%E6%8C%82%E8%BD%BD">2.2. 永久挂载</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+
+<hr>
+<h1 id="1-ubuntu-lvm-扩容"><a href="#1-ubuntu-lvm-扩容" class="headerlink" title="1. ubuntu  lvm 扩容"></a>1. ubuntu  lvm 扩容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lvextend -l +100%FREE /dev/mapper/ubuntu--vg-ubuntu--lv</span><br><span class="line"></span><br><span class="line">resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-内存虚拟盘"><a href="#2-内存虚拟盘" class="headerlink" title="2. 内存虚拟盘"></a>2. 内存虚拟盘</h1><h2 id="2-1-临时挂载"><a href="#2-1-临时挂载" class="headerlink" title="2.1. 临时挂载"></a>2.1. 临时挂载</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -t tmpfs -o size=512G tmpfs /datas/plots_tmp</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-永久挂载"><a href="#2-2-永久挂载" class="headerlink" title="2.2. 永久挂载"></a>2.2. 永久挂载</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/fstab</span><br><span class="line"></span><br><span class="line">tmpfs	/datas/plots_tmp	tmpfs	defaults,size=512G	0 0</span><br></pre></td></tr></table></figure></div>
+</div>
+
+        </div>
+        <div class="footer">
+            
+            <p class="footer-links">
+            
+                <a target="_blank" href="https://www.wmyeah.com">&copy; WMYeah</a>
+            
+            </p>
+            
+            <p class="footer-copyright">
+                <span>Powered by <a target="_blank" href="https://hexo.io">Hexo</a></span>
+                <span>Theme <a target="_blank" href="https://github.com/tinkink-co/hexo-theme-terminal">Terminal</a></span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

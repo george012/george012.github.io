@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+<link rel="stylesheet" href="/styles/base.css">
+
+    
+<link rel="stylesheet" href="/styles/theme.css">
+
+    <link rel="shortcut icon" href="/img/favicon.png">
+    
+    <title>Windows 一键查看已连接过的WIFI密码 - WMYeah</title>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXX');
+    </script>
+    
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="WMYeah" type="application/atom+xml">
+</head>
+<body>
+    <div class="header-title">
+        <span class="header-light"></span>
+        <span class="header-light"></span>
+        <span class="header-light"></span>
+        <span>WMYeah www.wmyeah.com<span>
+    </div>
+    <div class="container">
+        <ul class="nav">
+        
+            <li><a href="/">Main</a></li>
+        
+            <li><a href="/categories">Categories</a></li>
+        
+            <li><a href="/tags">Tags</a></li>
+        
+            <li><a href="/about">About</a></li>
+        
+        </ul>
+        <div class="content">
+            <div class="post-container">
+    <div class="post-header">
+        <span class="ui-tips">Title:</span>
+        <h1 class="ui-keyword post-title">Windows 一键查看已连接过的WIFI密码</h1>
+        <span class="post-date">2016-10-26</span>
+    </div>
+    
+    
+    <div class="post-header">
+        <span class="ui-tips">Tag:</span>
+        
+        <a href="/tags/Linux/">Linux</a>
+        
+    </div>
+    
+    
+    <div class="post-content"><p><font size=20>目录：</font></p>
+<!-- TOC -->
+
+<ul>
+<li><a href="#1-%E8%AF%B4%E6%98%8E">1. 说明:</a></li>
+<li><a href="#2-cmd%E5%91%BD%E4%BB%A4">2. CMD命令</a></li>
+<li><a href="#3-ps">3. PS:</a></li>
+</ul>
+<!-- /TOC -->
+<hr>
+<h1 id="1-说明"><a href="#1-说明" class="headerlink" title="1. 说明:"></a>1. 说明:</h1><ul>
+<li><font color=red>WARNING 请谨慎使用此命令，一切造成的后果请各位自行承担</font></li>
+</ul>
+<hr>
+<h1 id="2-CMD命令"><a href="#2-CMD命令" class="headerlink" title="2. CMD命令"></a>2. CMD命令</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for /f &quot;skip=9 tokens=1,2 delims=:&quot; %i in (&#x27;netsh wlan show profiles&#x27;) do  @echo %j | findstr -i -v echo | netsh wlan show profiles %j key=clear</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="3-PS"><a href="#3-PS" class="headerlink" title="3. PS:"></a>3. PS:</h1><ul>
+<li>根据网上资料亲测整理，最终解释权归<a href="http://www.wmyeah.com/">WMYeah</a>所有!</li>
+</ul>
+<hr>
+</div>
+</div>
+
+        </div>
+        <div class="footer">
+            
+            <p class="footer-links">
+            
+                <a target="_blank" href="https://www.wmyeah.com">&copy; WMYeah</a>
+            
+            </p>
+            
+            <p class="footer-copyright">
+                <span>Powered by <a target="_blank" href="https://hexo.io">Hexo</a></span>
+                <span>Theme <a target="_blank" href="https://github.com/tinkink-co/hexo-theme-terminal">Terminal</a></span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

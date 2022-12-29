@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+<link rel="stylesheet" href="/styles/base.css">
+
+    
+<link rel="stylesheet" href="/styles/theme.css">
+
+    <link rel="shortcut icon" href="/img/favicon.png">
+    
+    <title>Linux - Tag - WMYeah</title>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXX');
+    </script>
+    
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="WMYeah" type="application/atom+xml">
+</head>
+<body>
+    <div class="header-title">
+        <span class="header-light"></span>
+        <span class="header-light"></span>
+        <span class="header-light"></span>
+        <span>WMYeah www.wmyeah.com<span>
+    </div>
+    <div class="container">
+        <ul class="nav">
+        
+            <li><a href="/">Main</a></li>
+        
+            <li><a href="/categories">Categories</a></li>
+        
+            <li><a href="/tags">Tags</a></li>
+        
+            <li><a href="/about">About</a></li>
+        
+        </ul>
+        <div class="content">
+            
+<div class="post-item">
+    <div class="post-header">
+        <span class="ui-tips post-index">1.</span>
+        <h2><a href="/2020/04/04/Linux/dev_Linux_centos8_00/">CentOS8.X 安装后调优</a></h2>
+        <span class="post-date">2020-04-04</span>
+    </div>
+    <div class="post-content">
+        目录：
+
+
+
+1. 部分常用开发工具安装
+2. 安装epel源
+3. 更换yum源为阿里云yum源（国内提速）
+4. 关闭防火墙
+5. 关闭selinux
+6. 重启系统 使其生效
+7. PS:
+
+
+
+
+1. 部分常用开发工具安装1yum -y install nano vim wget curl net-tools lsof unzip unzip
+...
+    </div>
+</div>
+
+<div class="post-item">
+    <div class="post-header">
+        <span class="ui-tips post-index">2.</span>
+        <h2><a href="/2020/04/02/Linux/dev_Linux_centos8_python_01/">CentOS8.X 安装Python3.8.x</a></h2>
+        <span class="post-date">2020-04-02</span>
+    </div>
+    <div class="post-content">
+        目录：
+
+
+
+1. 安装依赖
+2. 安装Python3.8.2
+2.1. 安装并配置python
+2.2. 更换pip源加速pip下载速度（此处使用阿里云）
+2.3. 更新pip
+
+
+3. 番外 virtualenv 和 virtualenvwrapper 的安装
+3.1. virtualenv
+3.2. virtualenvwrapper
+
+
+4. ...
+    </div>
+</div>
+
+<div class="post-item">
+    <div class="post-header">
+        <span class="ui-tips post-index">3.</span>
+        <h2><a href="/2020/04/02/Linux/dev_linux_ubuntu20.04_01/">R730xd Ubuntu server 20.04 安装并调优</a></h2>
+        <span class="post-date">2020-04-02</span>
+    </div>
+    <div class="post-content">
+        目录：
+
+
+
+1. 修改apt源为阿里云
+1.1. 备份系统自带源
+1.2. 修改源为阿里云
+1.3. 更新apt
+1.4. 关闭SNAP自动更新
+
+
+2. PS:
+
+
+
+1. 修改apt源为阿里云1.1. 备份系统自带源1mv /etc/apt/sources.list /etc/apt/sources.list.bak
+
+1.2. 修改源为阿里云
+...
+    </div>
+</div>
+
+<div class="post-item">
+    <div class="post-header">
+        <span class="ui-tips post-index">4.</span>
+        <h2><a href="/2019/08/15/Python/dev_python_002/">linux python 常用命令</a></h2>
+        <span class="post-date">2019-08-15</span>
+    </div>
+    <div class="post-content">
+        目录：
+
+
+
+1. Centos 篇
+1.1. virtualenvwrapper 操作Python 虚拟环境virtualenv
+1.1.1. 指定版本创建
+1.1.2. 删除pyenv
+1.1.3. 切换 py-env环境
+1.1.4. 离开当前虚拟环境
+
+
+
+
+2. PS:
+
+
+
+1. Centos 篇1.1. virtualenvwrapper...
+    </div>
+</div>
+
+<div class="post-item">
+    <div class="post-header">
+        <span class="ui-tips post-index">5.</span>
+        <h2><a href="/2019/08/15/Python/py_sprider_01/">Python 爬虫常用命令集锦</a></h2>
+        <span class="post-date">2019-08-15</span>
+    </div>
+    <div class="post-content">
+        目录：
+
+
+
+1. 说明:
+2. python BeautifulSoup怎么获取无标签文本
+3. 时间函数处理
+4. 关于open()的mode参数：
+5. PS:
+
+
+
+
+1. 说明:
+常用命令集锦
+
+
+2. python BeautifulSoup怎么获取无标签文本12get_name = soup_data.find_all(&amp;#x27;div...
+    </div>
+</div>
+
+<div class="post-item">
+    <div class="post-header">
+        <span class="ui-tips post-index">6.</span>
+        <h2><a href="/2018/11/15/Python/dev_python_001/">Mac Pyhton3.7+Django2+Xadmin</a></h2>
+        <span class="post-date">2018-11-15</span>
+    </div>
+    <div class="post-content">
+        目录：
+
+
+
+1. 环境准备
+1.1. Python
+1.2. Django2
+1.3. Xadmin
+1.4. 设置
+1.5. 时区及本地显示
+1.6. 依赖文件处理
+1.7. 修改本版本Bug
+
+
+2. 部署（CentOS7）
+3. PS:
+
+
+
+1. 环境准备1.1. Python
+   此处使用Python3.7
+
+1.2. Django2
+ ...
+    </div>
+</div>
+
+<div class="post-item">
+    <div class="post-header">
+        <span class="ui-tips post-index">7.</span>
+        <h2><a href="/2018/08/15/Linux/dev_Linux_Ubuntu18.04_nginx_01/">Ubuntu 18.04 安装最新版本 Nginx</a></h2>
+        <span class="post-date">2018-08-15</span>
+    </div>
+    <div class="post-content">
+        
+
+
+1. 编辑源
+2. 源内容
+3. 添加nginx 公钥
+4. 更新并安装
+5. PS:
+
+
+
+
+1. 编辑源1vim  /etc/apt/sources.list.d/nginx.list
+
+2. 源内容12deb [arch=amd64] http://nginx.org/packages/mainline/ubuntu/ bionic ngi...
+    </div>
+</div>
+
+<div class="post-item">
+    <div class="post-header">
+        <span class="ui-tips post-index">8.</span>
+        <h2><a href="/2018/08/15/Linux/dev_Linux_redis_01/">CentOS7.X yum方式安装最新版本Redis</a></h2>
+        <span class="post-date">2018-08-15</span>
+    </div>
+    <div class="post-content">
+        目录：
+
+
+
+1. 更新yum源
+2. 安装redis-rpm源
+3. 安装Redis
+4. 开机自启Redis
+5. 设置redis.conf
+6. PS:
+
+
+
+
+1. 更新yum源1yum update
+
+
+2. 安装redis-rpm源1yum install http://rpms.famillecollet.com/enterprise/r...
+    </div>
+</div>
+
+<div class="post-item">
+    <div class="post-header">
+        <span class="ui-tips post-index">9.</span>
+        <h2><a href="/2018/08/13/Linux/dev_Linux_zoo_01/">CentOS7.4 zookeeper单机模式安装，并设置开机自启</a></h2>
+        <span class="post-date">2018-08-13</span>
+    </div>
+    <div class="post-content">
+        目录：
+
+
+
+1. 更新Yum源
+2. 获取最新的zookeeper Tar包
+3. 安装JDK（官网下载 此处选择的是 rpm包安装）
+4. 设置开机自启
+5. PS:
+
+
+
+
+1. 更新Yum源1yum update
+
+2. 获取最新的zookeeper Tar包12345wget http://mirrors.hust.edu.cn/apache...
+    </div>
+</div>
+
+<div class="post-item">
+    <div class="post-header">
+        <span class="ui-tips post-index">10.</span>
+        <h2><a href="/2018/04/05/Linux/dev_Linux_centos6.9_01/">CentOS6.9 后台自制shell循环任务+nohup运行SrpingBoot Jar包</a></h2>
+        <span class="post-date">2018-04-05</span>
+    </div>
+    <div class="post-content">
+        目录：
+
+
+
+1. Shell脚本示例
+2. 将写好的xxPlugin 放入&amp;#x2F;etc&amp;#x2F;init.d目录内
+3. PS:
+
+
+
+
+1. Shell脚本示例12345678910#!/bin/bash#chkconfig: 2345 99 99#description:xxPlugin#   *jar 为要执行的jar包所在绝对路径# ...
+    </div>
+</div>
+
+
+
+<nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/tags/Linux/page/2/">2</a><a class="page-number" href="/tags/Linux/page/3/">3</a><a class="extend next" rel="next" href="/tags/Linux/page/2/">Next</a>
+</nav>
+
+
+        </div>
+        <div class="footer">
+            
+            <p class="footer-links">
+            
+                <a target="_blank" href="https://www.wmyeah.com">&copy; WMYeah</a>
+            
+            </p>
+            
+            <p class="footer-copyright">
+                <span>Powered by <a target="_blank" href="https://hexo.io">Hexo</a></span>
+                <span>Theme <a target="_blank" href="https://github.com/tinkink-co/hexo-theme-terminal">Terminal</a></span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

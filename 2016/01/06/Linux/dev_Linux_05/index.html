@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+<link rel="stylesheet" href="/styles/base.css">
+
+    
+<link rel="stylesheet" href="/styles/theme.css">
+
+    <link rel="shortcut icon" href="/img/favicon.png">
+    
+    <title>Ubuntu 14.0.4 mysql 存储目录迁移 - WMYeah</title>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXX');
+    </script>
+    
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="WMYeah" type="application/atom+xml">
+</head>
+<body>
+    <div class="header-title">
+        <span class="header-light"></span>
+        <span class="header-light"></span>
+        <span class="header-light"></span>
+        <span>WMYeah www.wmyeah.com<span>
+    </div>
+    <div class="container">
+        <ul class="nav">
+        
+            <li><a href="/">Main</a></li>
+        
+            <li><a href="/categories">Categories</a></li>
+        
+            <li><a href="/tags">Tags</a></li>
+        
+            <li><a href="/about">About</a></li>
+        
+        </ul>
+        <div class="content">
+            <div class="post-container">
+    <div class="post-header">
+        <span class="ui-tips">Title:</span>
+        <h1 class="ui-keyword post-title">Ubuntu 14.0.4 mysql 存储目录迁移</h1>
+        <span class="post-date">2016-01-06</span>
+    </div>
+    
+    
+    <div class="post-header">
+        <span class="ui-tips">Tag:</span>
+        
+        <a href="/tags/Linux/">Linux</a>
+        
+    </div>
+    
+    
+    <div class="post-content"><p><font size=20>目录：</font></p>
+<!-- TOC -->
+
+<ul>
+<li><a href="#1-%E8%AF%B4%E6%98%8E">1. 说明:</a></li>
+<li><a href="#2-%E5%81%9C%E6%AD%A2mysql">2. 停止mysql</a></li>
+<li><a href="#3-%E5%BB%BA%E7%AB%8B%E8%BF%81%E7%A7%BB%E7%9B%AE%E7%9A%84%E5%9C%B0%E6%96%87%E4%BB%B6%E5%A4%B9">3. 建立迁移目的地文件夹</a></li>
+<li><a href="#4-%E4%BF%AE%E6%94%B9%E6%89%80%E5%B1%9E%E7%94%A8%E6%88%B7%E5%8F%8A%E6%89%80%E5%B1%9E%E7%94%A8%E6%88%B7%E7%BB%84%E4%B8%BAmysql">4. 修改所属用户及所属用户组为mysql</a></li>
+<li><a href="#5-%E4%BF%AE%E6%94%B9%E6%9D%83%E9%99%90">5. 修改权限</a></li>
+<li><a href="#6-%E6%8B%B7%E8%B4%9Dvarlibmysql%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6">6. 拷贝”&#x2F;var&#x2F;lib&#x2F;mysql&#x2F;*“所有文件</a></li>
+<li><a href="#7-%E4%BF%AE%E6%94%B9mysql%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">7. 修改mysql的配置文件</a></li>
+<li><a href="#8-%E4%BF%AE%E6%94%B9shell%E6%96%87%E4%BB%B6">8. 修改shell文件</a></li>
+<li><a href="#9-%E9%87%8D%E6%96%B0%E5%90%AF%E5%8A%A8apparmor%E5%92%8Cmysql">9. 重新启动apparmor和mysql</a></li>
+<li><a href="#10-%E5%88%A0%E9%99%A4%E5%8E%9F%E6%9C%89%E6%96%87%E4%BB%B6--option">10. 删除原有文件 (-Option)</a></li>
+<li><a href="#11-ps">11. PS:</a></li>
+</ul>
+<!-- /TOC -->
+<hr>
+<hr>
+<h1 id="1-说明"><a href="#1-说明" class="headerlink" title="1. 说明:"></a>1. 说明:</h1><ul>
+<li><p>parmars -mysqlDir- 新的mysql存储目录</p>
+<ul>
+<li>例如：&#x2F;home&#x2F;mysqlData&#x2F;</li>
+</ul>
+</li>
+<li><p><font color=red>WARNING 注意代码中的引用到的参数</font></p>
+</li>
+</ul>
+<hr>
+<h1 id="2-停止mysql"><a href="#2-停止mysql" class="headerlink" title="2. 停止mysql"></a>2. 停止mysql</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service mysql stop</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-建立迁移目的地文件夹"><a href="#3-建立迁移目的地文件夹" class="headerlink" title="3. 建立迁移目的地文件夹"></a>3. 建立迁移目的地文件夹</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p -mysqlDir-</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-修改所属用户及所属用户组为mysql"><a href="#4-修改所属用户及所属用户组为mysql" class="headerlink" title="4. 修改所属用户及所属用户组为mysql"></a>4. 修改所属用户及所属用户组为mysql</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -vR  mysql:mysql -mysqlDir-</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-修改权限"><a href="#5-修改权限" class="headerlink" title="5. 修改权限"></a>5. 修改权限</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod -vR 700 -mysqlDir-</span><br></pre></td></tr></table></figure>
+
+<h1 id="6-拷贝”-x2F-var-x2F-lib-x2F-mysql-x2F-”所有文件"><a href="#6-拷贝”-x2F-var-x2F-lib-x2F-mysql-x2F-”所有文件" class="headerlink" title="6. 拷贝”&#x2F;var&#x2F;lib&#x2F;mysql&#x2F;*”所有文件"></a>6. 拷贝”&#x2F;var&#x2F;lib&#x2F;mysql&#x2F;*”所有文件</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp -av /var/lib/mysql/* -mysqlDir-</span><br></pre></td></tr></table></figure>
+
+<h1 id="7-修改mysql的配置文件"><a href="#7-修改mysql的配置文件" class="headerlink" title="7. 修改mysql的配置文件"></a>7. 修改mysql的配置文件</h1><ul>
+<li><pre><code>sudo vi /etc/mysql/my.cnf
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">*	将</span><br></pre></td></tr></table></figure>
+datadir=/var/lib/mysql/
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">*	修改为</span><br></pre></td></tr></table></figure>
+datadir=-mysqlDir-
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 8. 修改shell文件&lt;/h3&gt;</span><br><span class="line"></span><br><span class="line">*	```</span><br><span class="line">	sudo vi /etc/apparmor.d/usr.sbin.mysqld</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+<li><p>   将</p>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/var/lib/mysql/ r,</span><br><span class="line">   /var/lib/mysql/** rwk,</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>   修改为</p>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-mysqlDir- r,</span><br><span class="line">   -mysqlDir-** rwk,</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="9-重新启动apparmor和mysql"><a href="#9-重新启动apparmor和mysql" class="headerlink" title="9. 重新启动apparmor和mysql"></a>9. 重新启动apparmor和mysql</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo service apparmor reload</span><br><span class="line">sudo service mysql start</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="10-删除原有文件-Option"><a href="#10-删除原有文件-Option" class="headerlink" title="10. 删除原有文件 (-Option)"></a>10. 删除原有文件 (-Option)</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rvf /var/lib/mysql/</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="11-PS"><a href="#11-PS" class="headerlink" title="11. PS:"></a>11. PS:</h1><ul>
+<li><p>根据网上资料亲测整理，最终解释权归<a href="http://www.wmyeah.com/">WMYeah</a>所有!</p>
+</li>
+<li><p>参考资料:</p>
+<ul>
+<li>1、<a target="_blank" rel="noopener" href="http://blog.csdn.net/wang794686714/article/details/39273385">ubuntu14.04 下 mysql 存储目录迁移</a></li>
+<li>2、<a target="_blank" rel="noopener" href="http://www.2cto.com/database/201604/496988.html">mysql数据库的使用与理解（基于ubuntu14.0.4LTS64位）</a></li>
+<li>2、<a target="_blank" rel="noopener" href="http://blog.csdn.net/lyhvoyage/article/details/50521440">ubuntu14.04下mysql数据库的默认存放路径并修改</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+</div>
+</div>
+
+        </div>
+        <div class="footer">
+            
+            <p class="footer-links">
+            
+                <a target="_blank" href="https://www.wmyeah.com">&copy; WMYeah</a>
+            
+            </p>
+            
+            <p class="footer-copyright">
+                <span>Powered by <a target="_blank" href="https://hexo.io">Hexo</a></span>
+                <span>Theme <a target="_blank" href="https://github.com/tinkink-co/hexo-theme-terminal">Terminal</a></span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+<link rel="stylesheet" href="/styles/base.css">
+
+    
+<link rel="stylesheet" href="/styles/theme.css">
+
+    <link rel="shortcut icon" href="/img/favicon.png">
+    
+    <title>git修改忽略文件“.gitignore”并立即生效 - WMYeah</title>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXX');
+    </script>
+    
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="WMYeah" type="application/atom+xml">
+</head>
+<body>
+    <div class="header-title">
+        <span class="header-light"></span>
+        <span class="header-light"></span>
+        <span class="header-light"></span>
+        <span>WMYeah www.wmyeah.com<span>
+    </div>
+    <div class="container">
+        <ul class="nav">
+        
+            <li><a href="/">Main</a></li>
+        
+            <li><a href="/categories">Categories</a></li>
+        
+            <li><a href="/tags">Tags</a></li>
+        
+            <li><a href="/about">About</a></li>
+        
+        </ul>
+        <div class="content">
+            <div class="post-container">
+    <div class="post-header">
+        <span class="ui-tips">Title:</span>
+        <h1 class="ui-keyword post-title">git修改忽略文件“.gitignore”并立即生效</h1>
+        <span class="post-date">2017-02-20</span>
+    </div>
+    
+    
+    
+    <div class="post-content"><p><font size=20>目录：</font></p>
+<!-- TOC -->
+
+<ul>
+<li><a href="#1-%E8%AF%B4%E6%98%8E">1. 说明:</a></li>
+<li><a href="#2-%E6%B8%85%E9%99%A4%E7%BC%93%E5%AD%98-%E8%AE%B0%E5%BE%97-%E5%B8%A6">2. 清除缓存 记得 带“.”</a></li>
+<li><a href="#3-%E5%B0%86%E5%8F%98%E5%8C%96%E6%8F%90%E4%BA%A4%E5%88%B0%E6%9A%82%E5%AD%98%E5%8C%BA">3. 将变化提交到暂存区</a></li>
+<li><a href="#4-%E6%8F%90%E4%BA%A4%E5%B9%B6%E5%A1%AB%E5%86%99%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF">4. 提交并填写相关信息</a></li>
+<li><a href="#5-%E5%8F%AF%E9%80%89%E5%90%8C%E6%AD%A5%E5%88%B0%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF">5. 可选同步到远程分支</a></li>
+</ul>
+<!-- /TOC -->
+
+<hr>
+<h1 id="1-说明"><a href="#1-说明" class="headerlink" title="1. 说明:"></a>1. 说明:</h1><ul>
+<li><font color=red>有时候我们得修改忽略文件并立即生效,这样方便我们精细化管理git仓库</font></li>
+</ul>
+<hr>
+<h1 id="2-清除缓存-记得-带“-”"><a href="#2-清除缓存-记得-带“-”" class="headerlink" title="2. 清除缓存 记得 带“.”"></a>2. 清除缓存 记得 带“.”</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-将变化提交到暂存区"><a href="#3-将变化提交到暂存区" class="headerlink" title="3. 将变化提交到暂存区"></a>3. 将变化提交到暂存区</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-提交并填写相关信息"><a href="#4-提交并填写相关信息" class="headerlink" title="4. 提交并填写相关信息"></a>4. 提交并填写相关信息</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;update .gitignore&quot;   </span><br></pre></td></tr></table></figure>
+
+<h1 id="5-可选同步到远程分支"><a href="#5-可选同步到远程分支" class="headerlink" title="5. 可选同步到远程分支"></a>5. <font color=red>可选</font>同步到远程分支</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line"></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id = "ps">PS:</h3>
+
+<ul>
+<li>根据网上资料亲测整理，最终解释权归<a href="http://www.wmyeah.com/">WMYeah</a>所有!</li>
+</ul>
+<hr>
+</div>
+</div>
+
+        </div>
+        <div class="footer">
+            
+            <p class="footer-links">
+            
+                <a target="_blank" href="https://www.wmyeah.com">&copy; WMYeah</a>
+            
+            </p>
+            
+            <p class="footer-copyright">
+                <span>Powered by <a target="_blank" href="https://hexo.io">Hexo</a></span>
+                <span>Theme <a target="_blank" href="https://github.com/tinkink-co/hexo-theme-terminal">Terminal</a></span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

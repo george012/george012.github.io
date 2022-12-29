@@ -61,17 +61,45 @@
 <div class="post-item">
     <div class="post-header">
         <span class="ui-tips post-index">2.</span>
-        <h2><a href="/2016/11/25/Android/Android_01/">Android JNI编译so动态库技巧(Mac环境)</a></h2>
-        <span class="post-date">2016-11-25</span>
+        <h2><a href="/2020/04/04/Linux/dev_Linux_centos8_00/">CentOS8.X 安装后调优</a></h2>
+        <span class="post-date">2020-04-04</span>
     </div>
     <div class="post-content">
         目录：
 
 
 
-1. 工具及环境
-1.1. 系统及硬件平台
-1.2. 软件及相关工具包
+1. 部分常用开发工具安装
+2. 安装epel源
+3. 更换yum源为阿里云yum源（国内提速）
+4. 关闭防火墙
+5. 关闭selinux
+6. 重启系统 使其生效
+7. PS:
+
+
+
+
+1. 部分常用开发工具安装1yum -y install nano vim wget curl net-tools lsof unzip unzip
+...
+    </div>
+</div>
+
+<div class="post-item">
+    <div class="post-header">
+        <span class="ui-tips post-index">3.</span>
+        <h2><a href="/2020/04/02/KVM/kvm_ubuntu_01/">Ubuntu Server 18.0.4.4 KVM 虚拟化搭建</a></h2>
+        <span class="post-date">2020-04-02</span>
+    </div>
+    <div class="post-content">
+        目录：
+
+
+
+1. KVM安装
+1.1. 检查是否支持
+1.2. 安装 cpu-checker 检查工具并检查机器是否支持 kvm
+1.3. 开始安装
 
 
 2. PS:
@@ -79,41 +107,216 @@
 
 
 
-1. 工具及环境1.1. 系统及硬件平台
-MacBook Air(made on 2013)
-MacOS Sierra(10.12.1)
+1. KVM安装1.1. 检查是否支持1egrep -c &amp;#x27;(vmx|svm)&amp;#x27; /proc/cpuinfo
 
-1.2. 软件及相关工具包
-Eclipse(Neon)Java EE IDE For Mac(主要为了...
+1.2. 安装 cpu-checker 检查...
     </div>
 </div>
 
 <div class="post-item">
     <div class="post-header">
-        <span class="ui-tips post-index">3.</span>
-        <h2><a href="/2015/03/12/Linux/Linux_ntp_01/">Linux 基操</a></h2>
-        <span class="post-date">2015-03-12</span>
+        <span class="ui-tips post-index">4.</span>
+        <h2><a href="/2020/04/02/Linux/dev_Linux_centos8_python_01/">CentOS8.X 安装Python3.8.x</a></h2>
+        <span class="post-date">2020-04-02</span>
     </div>
     <div class="post-content">
         目录：
 
 
 
-1. 、国内常用NTP服务器
-2. 、使用Let’s Encrypt 申请 泛域名ssl证书
+1. 安装依赖
+2. 安装Python3.8.2
+2.1. 安装并配置python
+2.2. 更换pip源加速pip下载速度（此处使用阿里云）
+2.3. 更新pip
+
+
+3. 番外 virtualenv 和 virtualenvwrapper 的安装
+3.1. virtualenv
+3.2. virtualenvwrapper
+
+
+4. ...
+    </div>
+</div>
+
+<div class="post-item">
+    <div class="post-header">
+        <span class="ui-tips post-index">5.</span>
+        <h2><a href="/2020/04/02/Linux/dev_linux_ubuntu20.04_01/">R730xd Ubuntu server 20.04 安装并调优</a></h2>
+        <span class="post-date">2020-04-02</span>
+    </div>
+    <div class="post-content">
+        目录：
+
+
+
+1. 修改apt源为阿里云
+1.1. 备份系统自带源
+1.2. 修改源为阿里云
+1.3. 更新apt
+1.4. 关闭SNAP自动更新
+
+
+2. PS:
+
+
+
+1. 修改apt源为阿里云1.1. 备份系统自带源1mv /etc/apt/sources.list /etc/apt/sources.list.bak
+
+1.2. 修改源为阿里云
+...
+    </div>
+</div>
+
+<div class="post-item">
+    <div class="post-header">
+        <span class="ui-tips post-index">6.</span>
+        <h2><a href="/2019/12/25/Git/git_auto-gitpull/">利用Crontab 定时任务自动git pull更新代码</a></h2>
+        <span class="post-date">2019-12-25</span>
+    </div>
+    <div class="post-content">
+        目录：
+
+
+
+1. Crontab操作
+2. 在需要更新的git项目文件夹内编辑git_pull.sh
 3. PS:
 
 
 
 
-1. 、国内常用NTP服务器
-国家授时中心新的NTP服务器地址：1ntp.ntsc.ac.cn
-阿里云1ntp.aliyun.com
-国内大学123456s1c.time.edu.cn       北京大学 s2m.time...
+1. Crontab操作
+1-1、编辑crontab
+1crontab -e
+
+1-2、将以下代码放入脚本
+12# 脚本目录、日志目录 根据自己实际情况设定*/2  *  *  *  *  /home/git_test/git_...
+    </div>
+</div>
+
+<div class="post-item">
+    <div class="post-header">
+        <span class="ui-tips post-index">7.</span>
+        <h2><a href="/2019/08/15/Python/dev_python_002/">linux python 常用命令</a></h2>
+        <span class="post-date">2019-08-15</span>
+    </div>
+    <div class="post-content">
+        目录：
+
+
+
+1. Centos 篇
+1.1. virtualenvwrapper 操作Python 虚拟环境virtualenv
+1.1.1. 指定版本创建
+1.1.2. 删除pyenv
+1.1.3. 切换 py-env环境
+1.1.4. 离开当前虚拟环境
+
+
+
+
+2. PS:
+
+
+
+1. Centos 篇1.1. virtualenvwrapper...
+    </div>
+</div>
+
+<div class="post-item">
+    <div class="post-header">
+        <span class="ui-tips post-index">8.</span>
+        <h2><a href="/2019/08/15/Python/py_sprider_01/">Python 爬虫常用命令集锦</a></h2>
+        <span class="post-date">2019-08-15</span>
+    </div>
+    <div class="post-content">
+        目录：
+
+
+
+1. 说明:
+2. python BeautifulSoup怎么获取无标签文本
+3. 时间函数处理
+4. 关于open()的mode参数：
+5. PS:
+
+
+
+
+1. 说明:
+常用命令集锦
+
+
+2. python BeautifulSoup怎么获取无标签文本12get_name = soup_data.find_all(&amp;#x27;div...
+    </div>
+</div>
+
+<div class="post-item">
+    <div class="post-header">
+        <span class="ui-tips post-index">9.</span>
+        <h2><a href="/2018/11/15/Python/dev_python_001/">Mac Pyhton3.7+Django2+Xadmin</a></h2>
+        <span class="post-date">2018-11-15</span>
+    </div>
+    <div class="post-content">
+        目录：
+
+
+
+1. 环境准备
+1.1. Python
+1.2. Django2
+1.3. Xadmin
+1.4. 设置
+1.5. 时区及本地显示
+1.6. 依赖文件处理
+1.7. 修改本版本Bug
+
+
+2. 部署（CentOS7）
+3. PS:
+
+
+
+1. 环境准备1.1. Python
+   此处使用Python3.7
+
+1.2. Django2
+ ...
+    </div>
+</div>
+
+<div class="post-item">
+    <div class="post-header">
+        <span class="ui-tips post-index">10.</span>
+        <h2><a href="/2018/08/15/Linux/dev_Linux_Ubuntu18.04_nginx_01/">Ubuntu 18.04 安装最新版本 Nginx</a></h2>
+        <span class="post-date">2018-08-15</span>
+    </div>
+    <div class="post-content">
+        
+
+
+1. 编辑源
+2. 源内容
+3. 添加nginx 公钥
+4. 更新并安装
+5. PS:
+
+
+
+
+1. 编辑源1vim  /etc/apt/sources.list.d/nginx.list
+
+2. 源内容12deb [arch=amd64] http://nginx.org/packages/mainline/ubuntu/ bionic ngi...
     </div>
 </div>
 
 
+
+<nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/2/">Next</a>
+</nav>
 
 
         </div>

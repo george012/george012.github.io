@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+<link rel="stylesheet" href="/styles/base.css">
+
+    
+<link rel="stylesheet" href="/styles/theme.css">
+
+    <link rel="shortcut icon" href="/img/favicon.png">
+    
+    <title>Ubuntu 14.0.4 Linux SVN Server搭建 - WMYeah</title>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXX');
+    </script>
+    
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="WMYeah" type="application/atom+xml">
+</head>
+<body>
+    <div class="header-title">
+        <span class="header-light"></span>
+        <span class="header-light"></span>
+        <span class="header-light"></span>
+        <span>WMYeah www.wmyeah.com<span>
+    </div>
+    <div class="container">
+        <ul class="nav">
+        
+            <li><a href="/">Main</a></li>
+        
+            <li><a href="/categories">Categories</a></li>
+        
+            <li><a href="/tags">Tags</a></li>
+        
+            <li><a href="/about">About</a></li>
+        
+        </ul>
+        <div class="content">
+            <div class="post-container">
+    <div class="post-header">
+        <span class="ui-tips">Title:</span>
+        <h1 class="ui-keyword post-title">Ubuntu 14.0.4 Linux SVN Server搭建</h1>
+        <span class="post-date">2015-02-01</span>
+    </div>
+    
+    
+    <div class="post-header">
+        <span class="ui-tips">Tag:</span>
+        
+        <a href="/tags/Linux/">Linux</a>
+        
+    </div>
+    
+    
+    <div class="post-content"><p><font size=20>目录：</font></p>
+<!-- TOC -->
+
+<ul>
+<li><a href="#1-%E8%AF%B4%E6%98%8E">1. 说明:</a></li>
+<li><a href="#2-%E5%AE%89%E8%A3%85subversion">2. 安装subversion</a></li>
+<li><a href="#3-%E5%88%9B%E5%BB%BA%E7%89%88%E6%9C%AC%E5%BA%93">3. 创建版本库</a></li>
+<li><a href="#4-%E9%85%8D%E7%BD%AEsvnserveconf%E7%89%88%E6%9C%AC%E5%BA%93%E4%BF%A1%E6%81%AF">4. 配置”svnserve.conf”版本库信息</a></li>
+<li><a href="#5-%E9%85%8D%E7%BD%AEpasswd%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF">5. 配置”passwd”用户信息</a></li>
+<li><a href="#6-%E9%85%8D%E7%BD%AEauthz%E7%94%A8%E6%88%B7%E6%8E%88%E6%9D%83">6. 配置”authz”用户授权</a></li>
+<li><a href="#7-%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8svn%E6%9C%8D%E5%8A%A1">7. 设置开机自启动SVN服务</a></li>
+<li><a href="#8-ps">8. PS:</a></li>
+</ul>
+<!-- /TOC -->
+
+<hr>
+<h1 id="1-说明"><a href="#1-说明" class="headerlink" title="1. 说明:"></a>1. 说明:</h1><ul>
+<li><p>parmars -svnDir- SVN项目统一存放路径</p>
+<ul>
+<li>例如：&#x2F;home&#x2F;svnProjects&#x2F;</li>
+</ul>
+</li>
+<li><p>parmars -svnDir_Project01- 暂命名为“Project01”的SVN库地址</p>
+<ul>
+<li>例如：&#x2F;home&#x2F;svnProjects&#x2F;svnP1&#x2F;</li>
+</ul>
+</li>
+<li><p><font color=red>WARNING 注意代码中的引用到的参数</font></p>
+</li>
+</ul>
+<hr>
+<h1 id="2-安装subversion"><a href="#2-安装subversion" class="headerlink" title="2. 安装subversion"></a>2. 安装subversion</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install subversion</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-创建版本库"><a href="#3-创建版本库" class="headerlink" title="3. 创建版本库"></a>3. 创建版本库</h1><ul>
+<li>   &#96;&#96;&#96;<br>   sudo mkdir -p -svnDir_Project01-   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">*	```</span><br><span class="line">	sudo svnadmin create -svnDir_Project01-</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="4-配置”svnserve-conf”版本库信息"><a href="#4-配置”svnserve-conf”版本库信息" class="headerlink" title="4. 配置”svnserve.conf”版本库信息"></a>4. 配置”svnserve.conf”版本库信息</h1><ul>
+<li><pre><code>sudo vi -svnDir_Project01-/conf/svnserve.conf
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">*	将以下参数注释掉</span><br></pre></td></tr></table></figure>
+[general]
+anon-access = none #匿名访问权限，默认read，none为不允许访问
+auth-access = write #认证用户权限
+password-db = passwd #用户信息，默认在版本库/conf下面,如需更改请填写文件绝对路径
+authz-db = authz
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 5. 配置&quot;passwd&quot;用户信息</span><br><span class="line">*	```</span><br><span class="line">	sudo vi -svnDir_Project01-/conf/passwd</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+<li><p>   按如下格式添加用户</p>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[users]</span><br><span class="line">zhangsan 	= 123</span><br><span class="line">lisi 		= 123</span><br><span class="line">wangwu 		= 123</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="6-配置”authz”用户授权"><a href="#6-配置”authz”用户授权" class="headerlink" title="6. 配置”authz”用户授权"></a>6. 配置”authz”用户授权</h1><ul>
+<li><p>   &#96;&#96;&#96;<br>   sudo vi -svnDir_Project01-&#x2F;conf&#x2F;authz</p>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">*	按如下格式修改或添加用户授权信息</span><br></pre></td></tr></table></figure>
+<p>   [groups] 				#定义组的用户<br>   manager &#x3D; zhangsan<br>   core_dev &#x3D; lisi,wangwu</p>
+<p>   #以此版本库根目录为基准下发权限物理位置为”-svnDir_Project01-“<br>   [&#x2F;] 					#manager组用户对根目录有读写权限<br>   @manager &#x3D; rw</p>
+<p>   [&#x2F;dev] 					#core_dev对dev子目录为读写权限<br>   @core_dev &#x3D; rw</p>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"># 7. 设置开机自启动SVN服务</span><br><span class="line"></span><br><span class="line">*	进入&quot;/etc/init.d/&quot;目录</span><br></pre></td></tr></table></figure>
+<p>   cd &#x2F;etc&#x2F;init.d&#x2F;</p>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">*	```</span><br><span class="line">	sudo vi runSVN .sh</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>   输入如下内容  此处为存放所有SVN版本库的目录的绝对地址</p>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">svnserve -d -r -svnDir-</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>   保存退出并修改权限</p>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 777 runSVN.sh</span><br></pre></td></tr></table></figure>
+
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-rc.d runSVN.sh defaults</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="8-PS"><a href="#8-PS" class="headerlink" title="8. PS:"></a>8. PS:</h1><ul>
+<li><p>根据网上资料亲测整理，最终解释权归<a href="http://www.wmyeah.com/">WMYeah</a>所有!</p>
+</li>
+<li><p>参考资料:</p>
+<ul>
+<li>1、<a target="_blank" rel="noopener" href="http://svnbook.red-bean.com/nightly/en/svn.intro.quickstart.html">High-Speed Tutorial Appendix A. Subversion Quick-Start Guide</a></li>
+<li>2、<a target="_blank" rel="noopener" href="http://www.cnblogs.com/bcsflilong/p/4231252.html">ubuntu 14.04 下搭建SVN服务器 svn:&#x2F;&#x2F;</a></li>
+<li>2、<a target="_blank" rel="noopener" href="http://www.codesec.net/view/146860.html">Ubuntu 14.0.4系统下SVN的安装与配置</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+</div>
+</div>
+
+        </div>
+        <div class="footer">
+            
+            <p class="footer-links">
+            
+                <a target="_blank" href="https://www.wmyeah.com">&copy; WMYeah</a>
+            
+            </p>
+            
+            <p class="footer-copyright">
+                <span>Powered by <a target="_blank" href="https://hexo.io">Hexo</a></span>
+                <span>Theme <a target="_blank" href="https://github.com/tinkink-co/hexo-theme-terminal">Terminal</a></span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
