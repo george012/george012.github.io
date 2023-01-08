@@ -1,338 +1,80 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-<link rel="stylesheet" href="/styles/base.css">
-
-    
-<link rel="stylesheet" href="/styles/theme.css">
-
-    <link rel="shortcut icon" href="/img/favicon.png">
-    
-    <title>首页 - WMYeah</title>
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-XXXXXXXXX');
-    </script>
-    
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="WMYeah" type="application/atom+xml">
-</head>
-<body>
-    <div class="header-title">
-        <span class="header-light"></span>
-        <span class="header-light"></span>
-        <span class="header-light"></span>
-        <span>WMYeah www.wmyeah.com<span>
-    </div>
-    <div class="container">
-        <ul class="nav">
-        
-            <li><a href="/">Main</a></li>
-        
-            <li><a href="/categories">Categories</a></li>
-        
-            <li><a href="/tags">Tags</a></li>
-        
-            <li><a href="/about">About</a></li>
-        
-        </ul>
-        <div class="content">
-            
-<div class="post-item">
-    <div class="post-header">
-        <span class="ui-tips post-index">1.</span>
-        <h2><a href="/2022/12/27/index/">Hi WellComing</a></h2>
-        <span class="post-date">2022-12-27</span>
-    </div>
-    <div class="post-content">
-        
-    </div>
-</div>
-
-<div class="post-item">
-    <div class="post-header">
-        <span class="ui-tips post-index">2.</span>
-        <h2><a href="/2020/04/04/Linux/dev_Linux_centos8_00/">CentOS8.X 安装后调优</a></h2>
-        <span class="post-date">2020-04-04</span>
-    </div>
-    <div class="post-content">
-        目录：
-
-
-
-1. 部分常用开发工具安装
-2. 安装epel源
-3. 更换yum源为阿里云yum源（国内提速）
-4. 关闭防火墙
-5. 关闭selinux
-6. 重启系统 使其生效
-7. PS:
-
-
-
-
-1. 部分常用开发工具安装1yum -y install nano vim wget curl net-tools lsof unzip unzip
-...
-    </div>
-</div>
-
-<div class="post-item">
-    <div class="post-header">
-        <span class="ui-tips post-index">3.</span>
-        <h2><a href="/2020/04/02/KVM/kvm_ubuntu_01/">Ubuntu Server 18.0.4.4 KVM 虚拟化搭建</a></h2>
-        <span class="post-date">2020-04-02</span>
-    </div>
-    <div class="post-content">
-        目录：
-
-
-
-1. KVM安装
-1.1. 检查是否支持
-1.2. 安装 cpu-checker 检查工具并检查机器是否支持 kvm
-1.3. 开始安装
-
-
-2. PS:
-
-
-
-
-1. KVM安装1.1. 检查是否支持1egrep -c &amp;#x27;(vmx|svm)&amp;#x27; /proc/cpuinfo
-
-1.2. 安装 cpu-checker 检查...
-    </div>
-</div>
-
-<div class="post-item">
-    <div class="post-header">
-        <span class="ui-tips post-index">4.</span>
-        <h2><a href="/2020/04/02/Linux/dev_Linux_centos8_python_01/">CentOS8.X 安装Python3.8.x</a></h2>
-        <span class="post-date">2020-04-02</span>
-    </div>
-    <div class="post-content">
-        目录：
-
-
-
-1. 安装依赖
-2. 安装Python3.8.2
-2.1. 安装并配置python
-2.2. 更换pip源加速pip下载速度（此处使用阿里云）
-2.3. 更新pip
-
-
-3. 番外 virtualenv 和 virtualenvwrapper 的安装
-3.1. virtualenv
-3.2. virtualenvwrapper
-
-
-4. ...
-    </div>
-</div>
-
-<div class="post-item">
-    <div class="post-header">
-        <span class="ui-tips post-index">5.</span>
-        <h2><a href="/2020/04/02/Linux/dev_linux_ubuntu20.04_01/">R730xd Ubuntu server 20.04 安装并调优</a></h2>
-        <span class="post-date">2020-04-02</span>
-    </div>
-    <div class="post-content">
-        目录：
-
-
-
-1. 修改apt源为阿里云
-1.1. 备份系统自带源
-1.2. 修改源为阿里云
-1.3. 更新apt
-1.4. 关闭SNAP自动更新
-
-
-2. PS:
-
-
-
-1. 修改apt源为阿里云1.1. 备份系统自带源1mv /etc/apt/sources.list /etc/apt/sources.list.bak
-
-1.2. 修改源为阿里云
-...
-    </div>
-</div>
-
-<div class="post-item">
-    <div class="post-header">
-        <span class="ui-tips post-index">6.</span>
-        <h2><a href="/2019/12/25/Git/git_auto-gitpull/">利用Crontab 定时任务自动git pull更新代码</a></h2>
-        <span class="post-date">2019-12-25</span>
-    </div>
-    <div class="post-content">
-        目录：
-
-
-
-1. Crontab操作
-2. 在需要更新的git项目文件夹内编辑git_pull.sh
-3. PS:
-
-
-
-
-1. Crontab操作
-1-1、编辑crontab
-1crontab -e
-
-1-2、将以下代码放入脚本
-12# 脚本目录、日志目录 根据自己实际情况设定*/2  *  *  *  *  /home/git_test/git_...
-    </div>
-</div>
-
-<div class="post-item">
-    <div class="post-header">
-        <span class="ui-tips post-index">7.</span>
-        <h2><a href="/2019/08/15/Python/dev_python_002/">linux python 常用命令</a></h2>
-        <span class="post-date">2019-08-15</span>
-    </div>
-    <div class="post-content">
-        目录：
-
-
-
-1. Centos 篇
-1.1. virtualenvwrapper 操作Python 虚拟环境virtualenv
-1.1.1. 指定版本创建
-1.1.2. 删除pyenv
-1.1.3. 切换 py-env环境
-1.1.4. 离开当前虚拟环境
-
-
-
-
-2. PS:
-
-
-
-1. Centos 篇1.1. virtualenvwrapper...
-    </div>
-</div>
-
-<div class="post-item">
-    <div class="post-header">
-        <span class="ui-tips post-index">8.</span>
-        <h2><a href="/2019/08/15/Python/py_sprider_01/">Python 爬虫常用命令集锦</a></h2>
-        <span class="post-date">2019-08-15</span>
-    </div>
-    <div class="post-content">
-        目录：
-
-
-
-1. 说明:
-2. python BeautifulSoup怎么获取无标签文本
-3. 时间函数处理
-4. 关于open()的mode参数：
-5. PS:
-
-
-
-
-1. 说明:
-常用命令集锦
-
-
-2. python BeautifulSoup怎么获取无标签文本12get_name = soup_data.find_all(&amp;#x27;div...
-    </div>
-</div>
-
-<div class="post-item">
-    <div class="post-header">
-        <span class="ui-tips post-index">9.</span>
-        <h2><a href="/2018/11/15/Python/dev_python_001/">Mac Pyhton3.7+Django2+Xadmin</a></h2>
-        <span class="post-date">2018-11-15</span>
-    </div>
-    <div class="post-content">
-        目录：
-
-
-
-1. 环境准备
-1.1. Python
-1.2. Django2
-1.3. Xadmin
-1.4. 设置
-1.5. 时区及本地显示
-1.6. 依赖文件处理
-1.7. 修改本版本Bug
-
-
-2. 部署（CentOS7）
-3. PS:
-
-
-
-1. 环境准备1.1. Python
-   此处使用Python3.7
-
-1.2. Django2
- ...
-    </div>
-</div>
-
-<div class="post-item">
-    <div class="post-header">
-        <span class="ui-tips post-index">10.</span>
-        <h2><a href="/2018/08/15/Linux/dev_Linux_Ubuntu18.04_nginx_01/">Ubuntu 18.04 安装最新版本 Nginx</a></h2>
-        <span class="post-date">2018-08-15</span>
-    </div>
-    <div class="post-content">
-        
-
-
-1. 编辑源
-2. 源内容
-3. 添加nginx 公钥
-4. 更新并安装
-5. PS:
-
-
-
-
-1. 编辑源1vim  /etc/apt/sources.list.d/nginx.list
-
-2. 源内容12deb [arch=amd64] http://nginx.org/packages/mainline/ubuntu/ bionic ngi...
-    </div>
-</div>
-
-
-
-<nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/2/">Next</a>
-</nav>
-
-
-        </div>
-        <div class="footer">
-            
-            <p class="footer-links">
-            
-                <a target="_blank" href="https://www.wmyeah.com">&copy; WMYeah</a>
-            
-            </p>
-            
-            <p class="footer-copyright">
-                <span>Powered by <a target="_blank" href="https://hexo.io">Hexo</a></span>
-                <span>Theme <a target="_blank" href="https://github.com/tinkink-co/hexo-theme-terminal">Terminal</a></span>
-            </p>
-        </div>
-    </div>
-</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=HandheldFriendly content="True"><meta http-equiv=x-ua-compatible content="IE=edge"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=generator content="Hugo 0.109.0"><link rel=apple-touch-icon sizes=180x180 href=https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon-16x16.png><link rel=manifest href=https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/site.webmanifest><link rel=mask-icon href=https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/safari-pinned-tab.svg color=#8aa2d3><link rel="shortcut icon" href=https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon.ico><meta name=theme-color content="#ffffff"><title>Archives - WMYeah</title><meta name=author content="WMYeah"><meta name=description content="A minimal Hugo theme with nice theme color."><link rel=alternate type=application/rss+xml href=https://www.wmyeah%E3%80%82com/archives/index.xml title=WMYeah><meta property="og:title" content="Archives"><meta name=twitter:title content="Archives"><meta property="og:type" content="website"><meta property="og:url" content="https://www.wmyeah%E3%80%82com/archives/"><meta property="og:image" content="https://www.wmyeah%E3%80%82com/img/og.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://www.wmyeah%E3%80%82com/img/og.png"><meta property="og:updated_time" content="2023-01-09T02:20:05+08:00"><style>@media(prefers-color-scheme:dark){body[data-theme=auto] img{filter:brightness(60%)}}body[data-theme=dark] img{filter:brightness(60%)}</style><link rel=stylesheet href=https://www.wmyeah%E3%80%82com/assets/css/fuji.min.b4a21b5d3eb1d0a51297e31230a65fc25e387843e45ec3a2d9176cd8d163c216d99b9b13a618b28f537c3b559ec8a408183b0fbfad48daddb9befa7d3ef90eed.css integrity="sha512-tKIbXT6x0KUSl+MSMKZfwl44eEPkXsOi2Rds2NFjwhbZm5sTphiyj1N8O1WeyKQIGDsPv61I2t25vvp9PvkO7Q=="></head><body data-theme=auto data-theme-auto=true><script data-cfasync=false>var fujiThemeData=localStorage.getItem("fuji_data-theme");fujiThemeData?fujiThemeData!=="auto"&&document.body.setAttribute("data-theme",fujiThemeData==="dark"?"dark":"light"):localStorage.setItem("fuji_data-theme","auto")</script><header><div class="container-lg clearfix"><div class="col-12 header"><a class=title-main href=https://www.wmyeah%E3%80%82com>WMYeah</a>
+<span class=title-sub>Buid Dream</span></div></div></header><main><div class="container-lg clearfix"><div class="col-12 col-md-9 float-left content"><div class=page-info><span>Total posts: 33</span></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/gmp/>GMP</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2022-12-22</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;53 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/dev_linux_centos8_00/>CentOS8.X 安装后调优</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-04-04</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;330 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/dev_linux_centos8_python_01/>CentOS8.X 安装Python3.8.x</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-04-02</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;381 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/dev_linux_ubuntu20.04_01/>R730xd Ubuntu server 20.04 安装并调优</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-04-02</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;266 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/kvm_ubuntu_01/>Ubuntu Server 18.0.4.4 KVM 虚拟化搭建</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-04-02</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;295 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/git_auto-gitpull/>利用Crontab 定时任务自动git pull更新代码</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2019-12-25</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;207 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/git>Git</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/dev_python_002/>linux python 常用命令</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2019-08-15</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;199 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/py_sprider_01/>Python 爬虫常用命令集锦</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2019-08-15</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;433 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/dev_python_001/>Mac Pyhton3.7+Django2+Xadmin</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2018-11-15</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;920 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/dev_linux_redis_01/>CentOS7.X yum方式安装最新版本Redis</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2018-08-15</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;170 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/dev_linux_ubuntu18.04_nginx_01/>Ubuntu 18.04 安装最新版本 Nginx</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2018-08-15</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;110 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/dev_linux_zoo_01/>CentOS7.4 zookeeper单机模式安装，并设置开机自启</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2018-08-13</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;367 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/ios_03/>CocoaPods使用问题汇总</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2018-04-08</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;95 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/ios>iOS</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/dev_linux_centos6.9_01/>CentOS6.9 后台自制shell循环任务+nohup运行SrpingBoot Jar包</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2018-04-05</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;225 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/dev_linux_lnmp_01/>CentOS7.X 搭建LNMP平台(Yum方式)</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2017-08-21</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;287 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/dev_linux_nginx_01/>CentOS7.3Yum方式安装Nginx</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2017-08-15</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;133 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/dev_linux_jetty_02/>Jetty9.2 阿里云SSL配置</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2017-08-10</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;519 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/dev_linux_centos7_01/>CentOS7.X 新装后个性化处理</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2017-08-01</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;284 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/git_msg_01/>git修改忽略文件“.gitignore”并立即生效</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2017-02-20</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;175 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/git>Git</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/android_01/>Android JNI编译so动态库技巧(Mac环境)</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2016-11-25</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;268 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/android>Android</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/embedded_01/>嵌入式开发之MacOS、iOS串口通讯开发环境准备</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2016-10-27</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;409 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F>嵌入式</a>&nbsp;<a href=/tags/sdk>SDK</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/ubuntu_lvm_extentions/>ubuntu lvm 扩容</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2016-10-26</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;63 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/dev_other_00/>Windows 一键查看已连接过的WIFI密码</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2016-10-26</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;103 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/ios_01/>iOS .Framework SDK开发注意事项</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2016-10-18</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;499 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/ios>iOS</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/ios_02/>制作cocoapods开源库-命令备忘</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2016-10-18</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;344 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/ios>iOS</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/dev_linux_05/>Ubuntu 14.0.4 mysql 存储目录迁移</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2016-01-06</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;500 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/dev_linux_01/>Ubuntu 14.0.4 phpMyAdmin 报错："缺少mcrypt扩展,请检查 PHP 配置"解决方案</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2016-01-06</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;237 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/dev_linux_07/>Ubuntu 14.0.4 安装并配置Gitolite服务器</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2015-06-09</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;622 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/dev_linux_04/>Ubuntu 14.0.4 配置静态IP</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2015-04-18</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;381 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/dev_linux_03/>在Ubuntu 14.0.4 LTS Apache virtualhost 虚拟主机相关设置(包含https)</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2015-04-18</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;1031 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/dev_linux_02/>Ubuntu 14.0.4搭建LAMP+phpmyadmin Web服务器</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2015-04-08</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;456 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/linux_ntp_01/>Linux 基操</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2015-03-12</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;305 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div><div class=post><h3 class="post-item post-title-archive"><a href=https://www.wmyeah%E3%80%82com/posts/dev_linux_06/>Ubuntu 14.0.4 Linux SVN Server搭建</a></h3><div class="post-item post-meta-archive"><span><i class="iconfont icon-today-sharp"></i>&nbsp;2015-02-01</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;775 words</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href=/tags/linux>Linux</a>&nbsp;</span></div></div></div><aside class="col-12 col-md-3 float-left sidebar"><div class="sidebar-item sidebar-pages"><h3>Pages</h3><ul><li><a href=/>Home</a></li><li><a href=/archives/>Archives</a></li><li><a href=/about>About</a></li><li><a href=/search/>Search</a></li></ul></div><div class="sidebar-item sidebar-links"><h3>Links</h3><ul><li><a href=https://github.com/george012 target=_blank><span>GitHub</span></a></li></ul></div><div class="sidebar-item sidebar-tags"><h3>Tags</h3><div><span><a href=/tags/android/>Android</a></span>
+<span><a href=/tags/git/>Git</a></span>
+<span><a href=/tags/ios/>iOS</a></span>
+<span><a href=/tags/linux/>Linux</a></span>
+<span><a href=/tags/sdk/>SDK</a></span>
+<span><a href=/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/>嵌入式</a></span></div></div></aside></div><div class=btn><div class=btn-menu id=btn-menu><i class="iconfont icon-grid-sharp"></i></div><div class=btn-toggle-mode><i class="iconfont icon-contrast-sharp"></i></div><div class=btn-scroll-top><i class="iconfont icon-chevron-up-circle-sharp"></i></div></div><aside class=sidebar-mobile style=display:none><div class=sidebar-wrapper><div class="sidebar-item sidebar-pages"><h3>Pages</h3><ul><li><a href=/>Home</a></li><li><a href=/archives/>Archives</a></li><li><a href=/about>About</a></li><li><a href=/search/>Search</a></li></ul></div><div class="sidebar-item sidebar-links"><h3>Links</h3><ul><li><a href=https://github.com/george012 target=_blank><span>GitHub</span></a></li></ul></div><div class="sidebar-item sidebar-tags"><h3>Tags</h3><div><span><a href=/tags/android/>Android</a></span>
+<span><a href=/tags/git/>Git</a></span>
+<span><a href=/tags/ios/>iOS</a></span>
+<span><a href=/tags/linux/>Linux</a></span>
+<span><a href=/tags/sdk/>SDK</a></span>
+<span><a href=/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/>嵌入式</a></span></div></div></div></aside></main><footer><div class="container-lg clearfix"><div class="col-12 footer"><span>&copy; 2020-2023
+<a href=https://www.wmyeah%E3%80%82com>WMYeah</a>
+| Powered by <a href=https://github.com/dsrkafuu/hugo-theme-fuji/ target=_blank>Fuji-v2</a> & <a href=https://gohugo.io/ target=_blank>Hugo</a></span></div></div></footer><script defer src=/assets/js/fuji.min.645f1123be695831f419ab54c1bcba327325895c740014006e57070d4f3e5d6b553e929c4b46f40ea707249e9c7f7c2a446d32a39ce7319f80a34525586a8e0f.js integrity="sha512-ZF8RI75pWDH0GatUwby6MnMliVx0ABQAblcHDU8+XWtVPpKcS0b0DqcHJJ6cf3wqRG0yo5znMZ+Ao0UlWGqODw=="></script></body></html>
