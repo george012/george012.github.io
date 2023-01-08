@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - master
+  pull_request:
+
 jobs:
   build-and-deploy:
     strategy:
@@ -12,31 +14,26 @@ jobs:
         os: [ubuntu-latest]
         
     runs-on: ${{ matrix.os }}
+
     steps:
     - name: Checkout 🛎️
-      uses: actions/checkout@master
-      
-    - name: Use Node.js 18
-      uses: actions/setup-node@v3
+      uses: actions/checkout@latest
       with:
-        ejs@^3.1.7:
-          version "3.1.7"
-        node-version: ${{ matrix.version }}
-
-    - name: Install Pandoc
-      run: |
-        sudo apt-get install pandoc
+        submodules: true  # Fetch Hugo themes (true OR recursive)
+        fetch-depth: 0  
+  
+    - name: Setup Hugo
+        uses: peaceiris/actions-hugo@latest
+        with:
+          hugo-version: 'latest'
+          # extended: true
         
-    - name: Install and Build 🔧 
-      run: |
-        npm install -g hexo-cli
-        npm install
-        hexo clean
-        hexo generate
+    - name: Build 🔧 
+      run: hugo --minify
 
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
-        FOLDER: public
+        publish_dir: ./public
