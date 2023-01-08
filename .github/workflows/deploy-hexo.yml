@@ -1,4 +1,4 @@
-name: Build and Deploy Hexo
+name: Build and Deploy
 on:
   push:
     branches:
@@ -23,7 +23,7 @@ jobs:
         fetch-depth: 0  
   
     - name: Setup Hugo
-        uses: peaceiris/actions-hugo@latest
+        uses: peaceiris/actions-hugo@main
         with:
           hugo-version: 'latest'
           # extended: true
