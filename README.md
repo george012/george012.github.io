@@ -1,8 +1,7 @@
 #
 ```
-git submodule add https://github.com/next-theme/hexo-theme-next ./themes/next
+git clone https://github.com/dsrkafuu/hugo-theme-fuji.git ./themes/fuji
 
 # 更新
-git submodule sync
 
 ```
