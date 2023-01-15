@@ -19,7 +19,6 @@ categories: [Linux]
 
 <!-- /TOC -->
 
-----
 
 # 1. 安装mysql-server、mysql-client
 ```
@@ -57,21 +56,22 @@ sudo service apache2 restart
 
 * 远程模式: 再浏览器中输入“http://domain”访问 (ps:domain 为 服务器IP地址或者已指向服务器的域名)
 
-------
 
 # 8. PS:
 
-* 根据网上资料亲测整理，最终解释权归[WMYeah][1]所有! 
+* 根据网上资料亲测整理，最终解释权归[WMYeah][1]所有!
 
 * 参考资料:
 
-	* 1、[Linux Ubuntu 14.04安装LAMP（Apache+MySQL+PHP）网站环境][2]
-	* 2、[Ubuntu Server 14.04 安装 LAMP][3]
-	* 2、[ubuntu14.04搭建web服务器lamp][4]
+    * 1、[Linux Ubuntu 14.04安装LAMP（Apache+MySQL+PHP）网站环境][2]
+    * 2、[Ubuntu Server 14.04 安装 LAMP][3]
+    * 2、[ubuntu14.04搭建web服务器lamp][4]
 
-------
 
-[1]:http://www.wmyeah.com
-[2]:http://www.jianshu.com/p/135697b3ff0d
-[3]:http://www.linuxidc.com/Linux/2015-03/115136.htm
-[4]:http://jingyan.baidu.com/article/ceb9fb10d572d88cad2ba093.html
+[1]]:http://www.wmyeah.com
+
+[2]]:http://www.jianshu.com/p/135697b3ff0d
+
+[3]]:http://www.linuxidc.com/Linux/2015-03/115136.htm
+
+[4]]:http://jingyan.baidu.com/article/ceb9fb10d572d88cad2ba093.html

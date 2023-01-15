@@ -76,3 +76,5 @@ yarn-error.log
 # hugo
 .externalNativeBuild
 .hugo_build.lock
+
+.idea
