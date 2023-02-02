@@ -1,0 +1,27 @@
+<!doctype html><html lang=cn><head><title>WMYeah</title><meta charset=utf-8><meta content="utf-8" http-equiv=encoding><meta name=viewport content="width=device-width,initial-scale=1"><meta name=format-detection content="telephone=no"><meta name=theme-color content="#000084"><link rel=icon href=https://www.wmyeah.com/favicon.ico><link rel=canonical href=https://www.wmyeah.com></head><body><nav class="navbar navbar-inverse navbar-fixed-top"><div class=navbar-inner><div class=container><button type=button class="btn btn-navbar" data-toggle=collapse data-target=.nav-collapse></button>
+<a class=brand href=https://www.wmyeah.com>WMYeah</a><div class="nav-collapse collapse"><ul class=nav><li><a href=/about/><span>about</span></a></li><li><a href=/posts/><span>posts</span></a></li></ul></div></div></div></nav><div id=content class=container><div class="row-fluid navmargin"><div class=page-header><h1>CentOS7.X yum方式安装最新版本Redis - Wed, Aug 15, 2018</h1></div><p class=lead></p><p>目录：</p><ul><li><a href=#1-%E6%9B%B4%E6%96%B0yum%E6%BA%90>1. 更新yum源</a></li><li><a href=#2-%E5%AE%89%E8%A3%85redis-rpm%E6%BA%90>2. 安装redis-rpm源</a></li><li><a href=#3-%E5%AE%89%E8%A3%85redis>3. 安装Redis</a></li><li><a href=#4-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AFredis>4. 开机自启Redis</a></li><li><a href=#5-%E8%AE%BE%E7%BD%AEredisconf>5. 设置redis.conf</a></li><li><a href=#6-ps>6. PS:</a></li></ul><h1 id=1-更新yum源>1. 更新yum源</h1><pre tabindex=0><code>yum update
+</code></pre><h1 id=2-安装redis-rpm源>2. 安装redis-rpm源</h1><pre tabindex=0><code>yum install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+</code></pre><h1 id=3-安装redis>3. 安装Redis</h1><pre tabindex=0><code>yum --enablerepo=remi install redis
+</code></pre><h1 id=4-开机自启redis>4. 开机自启Redis</h1><pre tabindex=0><code>systemctl enable redis
+</code></pre><h1 id=5-设置redisconf>5. 设置redis.conf</h1><ul><li>bind 127.0.0.1 改为 bind 0.0.0.0(可选)<pre tabindex=0><code>vim /etc/redis.conf
+</code></pre></li></ul><h1 id=6-ps>6. PS:</h1><ul><li>根据网上资料亲测整理，最终解释权归<a href=http://www.wmyeah.com>WMYeah</a>所有!</li><li>参考资料:</li></ul><hr><h4><a href=https://www.wmyeah.com>返回首页</a></h4></div></div><footer class=container><hr class=soften><p><a href=https://gitlab.com/maxlefou/hugo.386>hugo.386 theme by Max le Fou</a> |
+&copy;
+<a href=http://www.wmyeah.com target=_blank>WMYeah</a>
+<span id=thisyear>2023</span>
+| Example site
+| 构建于 <a href=//gohugo.io target=_blank>Hugo</a></p><p class=text-center></p></footer></body><link rel=stylesheet href=/css/bootstrap.css><link rel=stylesheet href=/css/bootstrap-responsive.css><link rel=stylesheet href=/css/style.css><script src=/js/jquery.js></script>
+<script src=/js/bootstrap-386.js></script>
+<script src=/js/bootstrap-transition.js></script>
+<script src=/js/bootstrap-alert.js></script>
+<script src=/js/bootstrap-modal.js></script>
+<script src=/js/bootstrap-dropdown.js></script>
+<script src=/js/bootstrap-scrollspy.js></script>
+<script src=/js/bootstrap-tab.js></script>
+<script src=/js/bootstrap-tooltip.js></script>
+<script src=/js/bootstrap-popover.js></script>
+<script src=/js/bootstrap-button.js></script>
+<script src=/js/bootstrap-collapse.js></script>
+<script src=/js/bootstrap-carousel.js></script>
+<script src=/js/bootstrap-typeahead.js></script>
+<script src=/js/bootstrap-affix.js></script>
+<script>_386={fastLoad:!0,onePass:!0,speedFactor:.5};function ThisYear(){document.getElementById("thisyear").innerHTML=(new Date).getFullYear()}</script></html>

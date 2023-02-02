@@ -1,0 +1,48 @@
+<!doctype html><html lang=cn><head><title>WMYeah</title><meta charset=utf-8><meta content="utf-8" http-equiv=encoding><meta name=viewport content="width=device-width,initial-scale=1"><meta name=format-detection content="telephone=no"><meta name=theme-color content="#000084"><link rel=icon href=https://www.wmyeah.com/favicon.ico><link rel=canonical href=https://www.wmyeah.com></head><body><nav class="navbar navbar-inverse navbar-fixed-top"><div class=navbar-inner><div class=container><button type=button class="btn btn-navbar" data-toggle=collapse data-target=.nav-collapse></button>
+<a class=brand href=https://www.wmyeah.com>WMYeah</a><div class="nav-collapse collapse"><ul class=nav><li><a href=/about/><span>about</span></a></li><li><a href=/posts/><span>posts</span></a></li></ul></div></div></div></nav><div id=content class=container><div class="row-fluid navmargin"><div class=page-header><h1>Linux 基操 - Thu, Mar 12, 2015</h1></div><p class=lead></p><p>目录：</p><ul><li><a href=#1-%E5%9B%BD%E5%86%85%E5%B8%B8%E7%94%A8ntp%E6%9C%8D%E5%8A%A1%E5%99%A8>1. 、国内常用NTP服务器</a></li><li><a href=#2-%E4%BD%BF%E7%94%A8lets-encrypt-%E7%94%B3%E8%AF%B7-%E6%B3%9B%E5%9F%9F%E5%90%8Dssl%E8%AF%81%E4%B9%A6>2. 、使用Let&rsquo;s Encrypt 申请 泛域名ssl证书</a></li><li><a href=#3-ps>3. PS:</a></li></ul><hr><h1 id=1-国内常用ntp服务器>1. 、国内常用NTP服务器</h1><ul><li>国家授时中心新的NTP服务器地址：<pre tabindex=0><code>ntp.ntsc.ac.cn
+</code></pre></li><li>阿里云<pre tabindex=0><code>ntp.aliyun.com
+</code></pre></li><li>国内大学<pre tabindex=0><code>s1c.time.edu.cn       北京大学 
+s2m.time.edu.cn       北京大学
+s1b.time.edu.cn       清华大学
+s1e.time.edu.cn       清华大学
+s2a.time.edu.cn       清华大学
+s2b.time.edu.cn       清华大学
+</code></pre></li><li>国外授时服务器<pre tabindex=0><code>#苹果提供的授时服务器   
+time1.apple.com
+time2.apple.com
+time3.apple.com
+time4.apple.com
+time5.apple.com
+time6.apple.com
+time7.apple.com
+
+#Google提供的授时服务器   
+time1.google.com
+time2.google.com
+time3.google.com
+time4.google.com
+</code></pre></li></ul><h1 id=2-使用lets-encrypt-申请-泛域名ssl证书>2. 、使用Let&rsquo;s Encrypt 申请 泛域名ssl证书</h1><ul><li>命令（Ubuntu serve 18.04.4）<pre tabindex=0><code>certbot certonly --preferred-challenges dns --manual  -d *.example.com --server https://acme-v02.api.letsencrypt.org/directory
+</code></pre></li><li>需要dns验证 自己操作增加txt 验证即可</li><li>默认在 /etc/letsencrypt/live/ 目录下</li><li>为了和阿里云配置保持同步做了两个注记命令 阿里云为 pem 和 key 结尾 这里都是pem<pre tabindex=0><code>cp /etc/letsencrypt/live/$mydomain.com/fullchain.pem ~/$mydomain.com_fullchain.pem
+
+cp /etc/letsencrypt/live/$mydomain.com/privkey.pem ~/$mydomain.com_fullchain_privkey.pem
+</code></pre></li></ul><hr><h1 id=3-ps>3. PS:</h1><ul><li>根据网上资料亲测整理，最终解释权归<a href=http://www.wmyeah.com>WMYeah</a>所有!</li></ul><hr><h4><a href=https://www.wmyeah.com>返回首页</a></h4></div></div><footer class=container><hr class=soften><p><a href=https://gitlab.com/maxlefou/hugo.386>hugo.386 theme by Max le Fou</a> |
+&copy;
+<a href=http://www.wmyeah.com target=_blank>WMYeah</a>
+<span id=thisyear>2023</span>
+| Example site
+| 构建于 <a href=//gohugo.io target=_blank>Hugo</a></p><p class=text-center></p></footer></body><link rel=stylesheet href=/css/bootstrap.css><link rel=stylesheet href=/css/bootstrap-responsive.css><link rel=stylesheet href=/css/style.css><script src=/js/jquery.js></script>
+<script src=/js/bootstrap-386.js></script>
+<script src=/js/bootstrap-transition.js></script>
+<script src=/js/bootstrap-alert.js></script>
+<script src=/js/bootstrap-modal.js></script>
+<script src=/js/bootstrap-dropdown.js></script>
+<script src=/js/bootstrap-scrollspy.js></script>
+<script src=/js/bootstrap-tab.js></script>
+<script src=/js/bootstrap-tooltip.js></script>
+<script src=/js/bootstrap-popover.js></script>
+<script src=/js/bootstrap-button.js></script>
+<script src=/js/bootstrap-collapse.js></script>
+<script src=/js/bootstrap-carousel.js></script>
+<script src=/js/bootstrap-typeahead.js></script>
+<script src=/js/bootstrap-affix.js></script>
+<script>_386={fastLoad:!0,onePass:!0,speedFactor:.5};function ThisYear(){document.getElementById("thisyear").innerHTML=(new Date).getFullYear()}</script></html>

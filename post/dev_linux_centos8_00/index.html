@@ -1,0 +1,39 @@
+<!doctype html><html lang=cn><head><title>WMYeah</title><meta charset=utf-8><meta content="utf-8" http-equiv=encoding><meta name=viewport content="width=device-width,initial-scale=1"><meta name=format-detection content="telephone=no"><meta name=theme-color content="#000084"><link rel=icon href=https://www.wmyeah.com/favicon.ico><link rel=canonical href=https://www.wmyeah.com></head><body><nav class="navbar navbar-inverse navbar-fixed-top"><div class=navbar-inner><div class=container><button type=button class="btn btn-navbar" data-toggle=collapse data-target=.nav-collapse></button>
+<a class=brand href=https://www.wmyeah.com>WMYeah</a><div class="nav-collapse collapse"><ul class=nav><li><a href=/about/><span>about</span></a></li><li><a href=/posts/><span>posts</span></a></li></ul></div></div></div></nav><div id=content class=container><div class="row-fluid navmargin"><div class=page-header><h1>CentOS8.X 安装后调优 - Sat, Apr 4, 2020</h1></div><p class=lead></p><p>目录：</p><ul><li><a href=#1-%E9%83%A8%E5%88%86%E5%B8%B8%E7%94%A8%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85>1. 部分常用开发工具安装</a></li><li><a href=#2-%E5%AE%89%E8%A3%85epel%E6%BA%90>2. 安装epel源</a></li><li><a href=#3-%E6%9B%B4%E6%8D%A2yum%E6%BA%90%E4%B8%BA%E9%98%BF%E9%87%8C%E4%BA%91yum%E6%BA%90%E5%9B%BD%E5%86%85%E6%8F%90%E9%80%9F>3. 更换yum源为阿里云yum源（国内提速）</a></li><li><a href=#4-%E5%85%B3%E9%97%AD%E9%98%B2%E7%81%AB%E5%A2%99>4. 关闭防火墙</a></li><li><a href=#5-%E5%85%B3%E9%97%ADselinux>5. 关闭selinux</a></li><li><a href=#6-%E9%87%8D%E5%90%AF%E7%B3%BB%E7%BB%9F-%E4%BD%BF%E5%85%B6%E7%94%9F%E6%95%88>6. 重启系统 使其生效</a></li><li><a href=#7-ps>7. PS:</a></li></ul><hr><h1 id=1-部分常用开发工具安装>1. 部分常用开发工具安装</h1><pre tabindex=0><code>yum -y install nano vim wget curl net-tools lsof unzip unzip
+</code></pre><h1 id=2-安装epel源>2. 安装epel源</h1><pre tabindex=0><code>yum install epel-release
+</code></pre><h1 id=3-更换yum源为阿里云yum源国内提速>3. 更换yum源为阿里云yum源（国内提速）</h1><ul><li><p>备份yum源</p><pre tabindex=0><code>mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
+</code></pre></li><li><p>下载阿里云yum 源</p><pre tabindex=0><code>wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-8.repo
+</code></pre></li><li><p>确保/etc/yum.repos.d/CentOS-Media.repo 文件中 enabled=0</p><pre tabindex=0><code>vim /etc/yum.repos.d/CentOS-Media.repo
+</code></pre></li><li><p>一步到位更新</p><pre tabindex=0><code>yum clean all &amp;&amp; yum makecache &amp;&amp; yum update
+</code></pre></li></ul><h1 id=4-关闭防火墙>4. 关闭防火墙</h1><ul><li><p>查看</p><pre tabindex=0><code>systemctl status firewalld
+</code></pre></li><li><p>关闭</p><pre tabindex=0><code>systemctl stop firewalld
+</code></pre></li><li><p>关闭开机自启</p><pre tabindex=0><code>systemctl disable firewalld
+</code></pre></li></ul><h1 id=5-关闭selinux>5. 关闭selinux</h1><ul><li><p>查看</p><pre tabindex=0><code>getenforce
+</code></pre></li><li><p>永久关闭</p><pre tabindex=0><code>vim /etc/selinux/config
+
+将
+SELINUX=enforcing
+改成
+SELINUX=disabled
+</code></pre></li></ul><h1 id=6-重启系统-使其生效>6. 重启系统 使其生效</h1><pre tabindex=0><code>reboot
+</code></pre><h1 id=7-ps>7. PS:</h1><ul><li>根据网上资料亲测整理，最终解释权归<a href=http://www.wmyeah.com>WMYeah</a>所有!</li><li>参考资料<a href=https://www.jb51.net/article/179464.htm>Centos8（最小化安装）全新安装Python3.8+pip的方法教程</a></li></ul><hr><h4><a href=https://www.wmyeah.com>返回首页</a></h4></div></div><footer class=container><hr class=soften><p><a href=https://gitlab.com/maxlefou/hugo.386>hugo.386 theme by Max le Fou</a> |
+&copy;
+<a href=http://www.wmyeah.com target=_blank>WMYeah</a>
+<span id=thisyear>2023</span>
+| Example site
+| 构建于 <a href=//gohugo.io target=_blank>Hugo</a></p><p class=text-center></p></footer></body><link rel=stylesheet href=/css/bootstrap.css><link rel=stylesheet href=/css/bootstrap-responsive.css><link rel=stylesheet href=/css/style.css><script src=/js/jquery.js></script>
+<script src=/js/bootstrap-386.js></script>
+<script src=/js/bootstrap-transition.js></script>
+<script src=/js/bootstrap-alert.js></script>
+<script src=/js/bootstrap-modal.js></script>
+<script src=/js/bootstrap-dropdown.js></script>
+<script src=/js/bootstrap-scrollspy.js></script>
+<script src=/js/bootstrap-tab.js></script>
+<script src=/js/bootstrap-tooltip.js></script>
+<script src=/js/bootstrap-popover.js></script>
+<script src=/js/bootstrap-button.js></script>
+<script src=/js/bootstrap-collapse.js></script>
+<script src=/js/bootstrap-carousel.js></script>
+<script src=/js/bootstrap-typeahead.js></script>
+<script src=/js/bootstrap-affix.js></script>
+<script>_386={fastLoad:!0,onePass:!0,speedFactor:.5};function ThisYear(){document.getElementById("thisyear").innerHTML=(new Date).getFullYear()}</script></html>

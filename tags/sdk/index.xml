@@ -1,1 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SDK on WMYeah</title><link>https://www.wmyeah.com/tags/sdk/</link><description>Recent content in SDK on WMYeah</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 27 Oct 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://www.wmyeah.com/tags/sdk/index.xml" rel="self" type="application/rss+xml"/><item><title>嵌入式开发之MacOS、iOS串口通讯开发环境准备</title><link>https://www.wmyeah.com/posts/embedded_01/</link><pubDate>Thu, 27 Oct 2016 00:00:00 +0000</pubDate><guid>https://www.wmyeah.com/posts/embedded_01/</guid><description>目录： 1. 说明 2. 准备串口线及对应串口传唤器驱动 2.1. 线材准备 2.2. 对应驱动准备 3. 下载可视化连接工具&amp;quot;CoolTerm_Mac&amp;quot; 4. 验证是否驱动安装完成 5. PS: 1. 说明 WARNING 凡所涉及线材及设备,请自行准备</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SDK on WMYeah</title><link>https://www.wmyeah.com/tags/sdk/</link><description>Recent content in SDK on WMYeah</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 27 Oct 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://www.wmyeah.com/tags/sdk/index.xml" rel="self" type="application/rss+xml"/><item><title>嵌入式开发之MacOS、iOS串口通讯开发环境准备</title><link>https://www.wmyeah.com/post/embedded_01/</link><pubDate>Thu, 27 Oct 2016 00:00:00 +0000</pubDate><guid>https://www.wmyeah.com/post/embedded_01/</guid><description>目录：
+1. 说明 2. 准备串口线及对应串口传唤器驱动 2.1. 线材准备 2.2. 对应驱动准备 3. 下载可视化连接工具&amp;quot;CoolTerm_Mac&amp;quot; 4. 验证是否驱动安装完成 5. PS: 1. 说明 WARNING 凡所涉及线材及设备,请自行准备此处仅为当前条件随便购买 2. 准备串口线及对应串口传唤器驱动 2.1. 线材准备 优越者 Y-105 USB转RS232 工口
+优越者 Y-105D USB转RS232 母口
+2.2. 对应驱动准备 购买线材时随附光盘中一般会有
+点这里下载基于PL-2303芯片驱动
+点这里下载CH430G For Mac 驱动下载
+点这里下载CH430G For Linux 驱动下载
+3. 下载可视化连接工具&amp;quot;CoolTerm_Mac&amp;quot; CoolTerm_Mac下载地址 4. 验证是否驱动安装完成 设置连接选项
+在另一台准备好的机器上输入测试字符
+5. PS: 根据网上资料亲测整理，最终解释权归WMYeah所有!
+参考资料:
+1、Roger Meier&amp;rsquo;s Freeware 2、Mac&amp;rsquo;s and serial TTY&amp;rsquo;s 2、在MAC OS X下安装usb转串口驱动（PL2303主控芯片）</description></item></channel></rss>

@@ -1,0 +1,25 @@
+<!doctype html><html lang=cn><head><title>WMYeah</title><meta charset=utf-8><meta content="utf-8" http-equiv=encoding><meta name=viewport content="width=device-width,initial-scale=1"><meta name=format-detection content="telephone=no"><meta name=theme-color content="#000084"><link rel=icon href=https://www.wmyeah.com/favicon.ico><link rel=canonical href=https://www.wmyeah.com></head><body><nav class="navbar navbar-inverse navbar-fixed-top"><div class=navbar-inner><div class=container><button type=button class="btn btn-navbar" data-toggle=collapse data-target=.nav-collapse></button>
+<a class=brand href=https://www.wmyeah.com>WMYeah</a><div class="nav-collapse collapse"><ul class=nav><li><a href=/about/><span>about</span></a></li><li><a href=/posts/><span>posts</span></a></li></ul></div></div></div></nav><div id=content class=container><div class="row-fluid navmargin"><div class=page-header><h1>git相关配置 - Mon, Jul 17, 2017</h1></div><p class=lead></p><p>目录：</p><ul><li><a href=#1-%E8%AF%B4%E6%98%8E>1. 说明:</a></li><li><a href=#2-%E5%85%B3%E4%BA%8Elf%E5%92%8Ccrlf%E7%9A%84%E5%A4%84%E7%90%86>2. 关于<code>LF</code>和<code>CRLF</code>的处理</a><ul><li><a href=#%E5%A4%84%E7%90%86coreautocrlf>处理<code>core.autocrlf</code></a></li><li><a href=#%E5%A4%84%E7%90%86coresafecrlf>处理<code>core.safecrlf</code></a></li></ul></li><li><a href=#%E5%A4%84%E7%90%86%E6%A1%88%E4%BE%8B>处理案例:</a></li></ul><h1 id=1-说明>1. 说明:</h1><ul><li>git相关配置，方便跨平台</li></ul><h1 id=2-关于lf和crlf的处理>2. 关于<code>LF</code>和<code>CRLF</code>的处理</h1><h2 id=处理coreautocrlf>处理<code>core.autocrlf</code></h2><ul><li>core.autocrlf 的默认值是false</li><li><code>core.autocrlf</code>是git中负责处理<code>line ending</code>的变量，可以设置3个值：<ul><li><code>true</code> 提交时改成LF，检出时改成CRLF</li><li><code>input</code> 提交时改成LF，检出时不改</li><li><code>false</code> (默认值) 提交时是什么就是什么，不改换行符，检出时也不</li></ul></li></ul><h2 id=处理coresafecrlf>处理<code>core.safecrlf</code></h2><ul><li>默认值是warn</li><li><code>core.safecrlf</code> 默认值可设置3个：<ul><li><code>true</code> 拒绝提交包含混合换行符的文件 （会提示 Fatal:xxx）</li><li><code>false</code> 允许提交包含混合换行符的文件</li><li><code>warn</code> 提交包含混合换行符的文件时给出警告 (默认值)</li></ul></li></ul><h1 id=处理案例>处理案例:</h1><pre tabindex=0><code>git config --global core.autocrlf input
+
+git config --global core.safecrlf true
+</code></pre><ul><li>根据网上资料亲测整理，最终解释权归[WMYeah][1]所有!</li></ul><hr><p>[1]]:http://www.wmyeah.com</p><h4><a href=https://www.wmyeah.com>返回首页</a></h4></div></div><footer class=container><hr class=soften><p><a href=https://gitlab.com/maxlefou/hugo.386>hugo.386 theme by Max le Fou</a> |
+&copy;
+<a href=http://www.wmyeah.com target=_blank>WMYeah</a>
+<span id=thisyear>2023</span>
+| Example site
+| 构建于 <a href=//gohugo.io target=_blank>Hugo</a></p><p class=text-center></p></footer></body><link rel=stylesheet href=/css/bootstrap.css><link rel=stylesheet href=/css/bootstrap-responsive.css><link rel=stylesheet href=/css/style.css><script src=/js/jquery.js></script>
+<script src=/js/bootstrap-386.js></script>
+<script src=/js/bootstrap-transition.js></script>
+<script src=/js/bootstrap-alert.js></script>
+<script src=/js/bootstrap-modal.js></script>
+<script src=/js/bootstrap-dropdown.js></script>
+<script src=/js/bootstrap-scrollspy.js></script>
+<script src=/js/bootstrap-tab.js></script>
+<script src=/js/bootstrap-tooltip.js></script>
+<script src=/js/bootstrap-popover.js></script>
+<script src=/js/bootstrap-button.js></script>
+<script src=/js/bootstrap-collapse.js></script>
+<script src=/js/bootstrap-carousel.js></script>
+<script src=/js/bootstrap-typeahead.js></script>
+<script src=/js/bootstrap-affix.js></script>
+<script>_386={fastLoad:!0,onePass:!0,speedFactor:.5};function ThisYear(){document.getElementById("thisyear").innerHTML=(new Date).getFullYear()}</script></html>

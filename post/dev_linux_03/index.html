@@ -1,0 +1,63 @@
+<!doctype html><html lang=cn><head><title>WMYeah</title><meta charset=utf-8><meta content="utf-8" http-equiv=encoding><meta name=viewport content="width=device-width,initial-scale=1"><meta name=format-detection content="telephone=no"><meta name=theme-color content="#000084"><link rel=icon href=https://www.wmyeah.com/favicon.ico><link rel=canonical href=https://www.wmyeah.com></head><body><nav class="navbar navbar-inverse navbar-fixed-top"><div class=navbar-inner><div class=container><button type=button class="btn btn-navbar" data-toggle=collapse data-target=.nav-collapse></button>
+<a class=brand href=https://www.wmyeah.com>WMYeah</a><div class="nav-collapse collapse"><ul class=nav><li><a href=/about/><span>about</span></a></li><li><a href=/posts/><span>posts</span></a></li></ul></div></div></div></nav><div id=content class=container><div class="row-fluid navmargin"><div class=page-header><h1>在Ubuntu 14.0.4 LTS Apache virtualhost 虚拟主机相关设置(包含https) - Sat, Apr 18, 2015</h1></div><p class=lead></p><p>目录：</p><ul><li><a href=#1-%E8%AF%B4%E6%98%8E>1. 说明：</a></li><li><a href=#2-%E5%88%9B%E5%BB%BA%E5%AD%98%E6%94%BE%E6%89%80%E6%9C%89web%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%9B%B8%E5%85%B3%E7%9B%AE%E5%BD%95>2. 创建存放所有Web项目的相关目录</a><ul><li><a href=#21-web-%E6%A0%B9%E7%9B%AE%E5%BD%95>2.1. web 根目录</a></li><li><a href=#22-%E9%A1%B9%E7%9B%AEa-%E6%A0%B9%E7%9B%AE%E5%BD%95>2.2. 项目A 根目录</a></li><li><a href=#23-%E9%A1%B9%E7%9B%AEb-%E6%A0%B9%E7%9B%AE%E5%BD%95>2.3. 项目B 根目录</a></li><li><a href=#24-%E8%B5%8B%E4%BA%88%E7%9B%B8%E5%85%B3%E7%9B%AE%E5%BD%95%E6%9D%83%E9%99%90>2.4. 赋予相关目录权限</a></li></ul></li><li><a href=#3-apache2conf-%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE>3. apache2.conf 相关设置</a><ul><li><a href=#31-%E5%A4%87%E4%BB%BD%E5%8E%9F%E6%9C%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6>3.1. 备份原有配置文件</a></li><li><a href=#32-%E7%BC%96%E8%BE%91-apache2conf>3.2. 编辑 apache2.conf</a></li></ul></li><li><a href=#4-%E8%AE%BE%E7%BD%AE-apache-%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA>4. 设置 apache 虚拟主机</a><ul><li><a href=#41-%E7%BC%96%E8%BE%91--domain_a-conf-%E6%96%87%E4%BB%B6>4.1. 编辑 -Domain_A-.conf 文件</a><ul><li><a href=#411-%E6%8B%B7%E8%B4%9D%E6%A0%B7%E4%BE%8B>4.1.1. 拷贝样例</a></li><li><a href=#412-%E7%BC%96%E8%BE%91>4.1.2. 编辑</a><ul><li><a href=#4121-%E6%A0%B9%E6%8D%AE%E9%9C%80%E6%B1%82%E8%AE%BE%E7%BD%AE>4.1.2.1. 根据需求设置</a></li><li><a href=#4122-%E8%AE%BE%E7%BD%AEhttps%E6%94%AF%E6%8C%81--option>4.1.2.2. 设置https支持 (-Option)</a></li></ul></li></ul></li><li><a href=#42-%E7%BC%96%E8%BE%91-domain_b-conf%E6%96%87%E4%BB%B6>4.2. 编辑-Domain_B-.conf文件</a></li></ul></li><li><a href=#5-%E5%90%AF%E7%94%A8%E9%85%8D%E7%BD%AE>5. 启用配置</a><ul><li><a href=#51-%E8%BF%9B%E5%85%A5-etcapache2sites-available-%E7%9B%AE%E5%BD%95>5.1. 进入 “/etc/apache2/sites-available” 目录</a></li><li><a href=#52-%E7%A6%81%E7%94%A8%E7%B3%BB%E7%BB%9F%E9%BB%98%E8%AE%A4%E8%A7%A3%E6%9E%90%E6%96%87%E4%BB%B6-000-defaultconf>5.2. 禁用系统默认解析文件 “000-default.conf”</a></li><li><a href=#53-%E5%90%AF%E7%94%A8%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E6%96%87%E4%BB%B6--domain_a-conf>5.3. 启用配置好的文件 “-Domain_A-.conf”</a></li></ul></li><li><a href=#6-%E5%BC%80%E5%90%AFapache-ssl%E6%94%AF%E6%8C%81--option>6. 开启apache ssl支持 (-Option)</a></li><li><a href=#7-%E9%87%8D%E5%90%AFapache2%E6%9C%8D%E5%8A%A1>7. 重启Apache2服务</a></li><li><a href=#8-%E8%AE%BF%E9%97%AE%E7%AB%99%E7%82%B9>8. 访问站点:</a></li><li><a href=#9-ps>9. PS:</a></li></ul><hr><h1 id=1-说明>1. 说明：</h1><ul><li><p>parmars -webDir- 存放所有Web项目的Linux文件系统绝对目录</p><ul><li>例如：/home/webSite</li></ul></li><li><p>parmars -webSubDir_A- web项目A根目录</p><ul><li>例如：/home/webSite/webA</li></ul></li><li><p>parmars -webSubDir_B- web项目A根目录</p><ul><li>例如：/home/webSite/webB</li></ul></li><li><p>parmars [-Domain_A-] webA域名</p><ul><li>例如：a.wmyeah.com</li></ul></li><li><p>parmars [-Domain_B-] webB域名</p><ul><li>例如：b.wmyeah.com</li></ul></li><li><p>parmars -SSL_File_Path- SSL文件存放位置 (-Option)</p><ul><li>例如：/home/SSLFiles</li></ul></li></ul><hr><h1 id=2-创建存放所有web项目的相关目录>2. 创建存放所有Web项目的相关目录</h1><h2 id=21-web-根目录>2.1. web 根目录</h2><pre tabindex=0><code>sudo mkdir -p  -webDir-
+</code></pre><h2 id=22-项目a-根目录>2.2. 项目A 根目录</h2><pre tabindex=0><code>sudo mkdir -p  -webSubDir_A-
+</code></pre><h2 id=23-项目b-根目录>2.3. 项目B 根目录</h2><pre tabindex=0><code>sudo mkdir -p  -webSubDir_B-
+</code></pre><h2 id=24-赋予相关目录权限>2.4. 赋予相关目录权限</h2><pre tabindex=0><code>sudo chown -R $USER:$USER -webDir-
+sudo chown -R $USER:$USER -webDir_A-
+sudo chown -R $USER:$USER -webDir_B-
+</code></pre><hr><h1 id=3-apache2conf-相关设置>3. apache2.conf 相关设置</h1><h2 id=31-备份原有配置文件>3.1. 备份原有配置文件</h2><pre><code>```cp /etc/apache2/apache2.conf /etc/apache2/apache2.conf.bak```
+</code></pre><h2 id=32-编辑-apache2conf>3.2. 编辑 apache2.conf</h2><pre><code>```sudo vi /etc/apache2/apache2.conf```
+* 将
+```
+&lt;Directory /var/www/&gt;
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+&lt;/Directory&gt;
+```
+* 改为
+```
+&lt;Directory /zx_dev/webSite/&gt;
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+&lt;/Directory&gt;
+```
+</code></pre><ul><li>保存退出</li></ul><hr><h1 id=4-设置-apache-虚拟主机>4. 设置 apache 虚拟主机</h1><h2 id=41-编辑--domain_a-conf-文件>4.1. 编辑 -Domain_A-.conf 文件</h2><h3 id=411-拷贝样例>4.1.1. 拷贝样例</h3><pre tabindex=0><code>sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/-Domain_A-.conf
+</code></pre><h3 id=412-编辑>4.1.2. 编辑</h3><pre tabindex=0><code>sudo vi /etc/apache2/sites-available/-Domain_A-.conf
+</code></pre><h4 id=4121-根据需求设置>4.1.2.1. 根据需求设置</h4><pre tabindex=0><code>&lt;VirtualHost *:80&gt; 		 			// 端口
+ServerName -Domain_A-				// 域名
+ServerAdmin webmaster@-Domain_A-    // 管理员邮箱
+DocumentRoot -webDir_A-				// 项目根目录
+</code></pre><h4 id=4122-设置https支持--option>4.1.2.2. 设置https支持 (-Option)</h4><ul><li>在“ &lt;VirtualHost *:80 ”上方添加 “Listen 443”<pre tabindex=0><code>Listen 443
+&lt;VirtualHost *:80&gt;
+</code></pre></li><li>开启SSL并添加Key文件<pre tabindex=0><code>SSLEngine on
+SSLCertificateFile      -SSL_File_Path-/-Domain_A-.crt
+SSLCertificateKeyFile   -SSL_File_Path-/-Domain_A-.key
+SSLCACertificateFile    -SSL_File_Path-/-Domain_A-_Bundle.crt
+</code></pre></li></ul><h2 id=42-编辑-domain_b-conf文件>4.2. 编辑-Domain_B-.conf文件</h2><ul><li><a href=#41-%E7%BC%96%E8%BE%91--domain_a-conf-%E6%96%87%E4%BB%B6>请参照4.1</a></li></ul><h1 id=5-启用配置>5. 启用配置</h1><h2 id=51-进入-etcapache2sites-available-目录>5.1. 进入 “/etc/apache2/sites-available” 目录</h2><ul><li><pre tabindex=0><code>cd /etc/apache2/sites-available/
+</code></pre></li></ul><h2 id=52-禁用系统默认解析文件-000-defaultconf>5.2. 禁用系统默认解析文件 “000-default.conf”</h2><ul><li><pre tabindex=0><code>sudo a2dissite 000-default.conf
+</code></pre></li></ul><h2 id=53-启用配置好的文件--domain_a-conf>5.3. 启用配置好的文件 “-Domain_A-.conf”</h2><ul><li><pre tabindex=0><code>sudo a2ensite -Domain_A-.conf
+</code></pre></li></ul><h1 id=6-开启apache-ssl支持--option>6. 开启apache ssl支持 (-Option)</h1><ul><li><pre tabindex=0><code>sudo a2enmod ssl
+</code></pre></li></ul><h1 id=7-重启apache2服务>7. 重启Apache2服务</h1><ul><li><pre tabindex=0><code>sudo service apache2 restart
+</code></pre></li></ul><h1 id=8-访问站点>8. 访问站点:</h1><ul><li>在浏览器中输入“https://domain”访问 (ps:domain 为 服务器IP地址或者已指向服务器的域名)</li></ul><hr><h1 id=9-ps>9. PS:</h1><ul><li><p>根据网上资料亲测整理，最终解释权归<a href=http://www.wmyeah.com>WMYeah</a>所有!</p></li><li><p>参考资料:</p><ul><li>1、<a href="https://bbs.wosign.com/forum.php?mod=viewthread&tid=2930&highlight=apache">LAMP（Apache）环境部署安装SSL安全证书且可HTTPS加密网站</a></li><li>2、<a href="https://bbs.wosign.com/forum.php?mod=viewthread&tid=1018&highlight=apache">linux下的apache部署ssl证书</a></li><li>2、<a href=http://www.linuxidc.com/Linux/2015-02/113588.htm>如何在Ubuntu 14.04 上为Apache 2.4 安装SSL支持</a></li></ul></li></ul><hr><h4><a href=https://www.wmyeah.com>返回首页</a></h4></div></div><footer class=container><hr class=soften><p><a href=https://gitlab.com/maxlefou/hugo.386>hugo.386 theme by Max le Fou</a> |
+&copy;
+<a href=http://www.wmyeah.com target=_blank>WMYeah</a>
+<span id=thisyear>2023</span>
+| Example site
+| 构建于 <a href=//gohugo.io target=_blank>Hugo</a></p><p class=text-center></p></footer></body><link rel=stylesheet href=/css/bootstrap.css><link rel=stylesheet href=/css/bootstrap-responsive.css><link rel=stylesheet href=/css/style.css><script src=/js/jquery.js></script>
+<script src=/js/bootstrap-386.js></script>
+<script src=/js/bootstrap-transition.js></script>
+<script src=/js/bootstrap-alert.js></script>
+<script src=/js/bootstrap-modal.js></script>
+<script src=/js/bootstrap-dropdown.js></script>
+<script src=/js/bootstrap-scrollspy.js></script>
+<script src=/js/bootstrap-tab.js></script>
+<script src=/js/bootstrap-tooltip.js></script>
+<script src=/js/bootstrap-popover.js></script>
+<script src=/js/bootstrap-button.js></script>
+<script src=/js/bootstrap-collapse.js></script>
+<script src=/js/bootstrap-carousel.js></script>
+<script src=/js/bootstrap-typeahead.js></script>
+<script src=/js/bootstrap-affix.js></script>
+<script>_386={fastLoad:!0,onePass:!0,speedFactor:.5};function ThisYear(){document.getElementById("thisyear").innerHTML=(new Date).getFullYear()}</script></html>

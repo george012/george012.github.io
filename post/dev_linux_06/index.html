@@ -1,0 +1,53 @@
+<!doctype html><html lang=cn><head><title>WMYeah</title><meta charset=utf-8><meta content="utf-8" http-equiv=encoding><meta name=viewport content="width=device-width,initial-scale=1"><meta name=format-detection content="telephone=no"><meta name=theme-color content="#000084"><link rel=icon href=https://www.wmyeah.com/favicon.ico><link rel=canonical href=https://www.wmyeah.com></head><body><nav class="navbar navbar-inverse navbar-fixed-top"><div class=navbar-inner><div class=container><button type=button class="btn btn-navbar" data-toggle=collapse data-target=.nav-collapse></button>
+<a class=brand href=https://www.wmyeah.com>WMYeah</a><div class="nav-collapse collapse"><ul class=nav><li><a href=/about/><span>about</span></a></li><li><a href=/posts/><span>posts</span></a></li></ul></div></div></div></nav><div id=content class=container><div class="row-fluid navmargin"><div class=page-header><h1>Ubuntu 14.0.4 Linux SVN Server搭建 - Sun, Feb 1, 2015</h1></div><p class=lead></p><p>目录：</p><ul><li><a href=#1-%E8%AF%B4%E6%98%8E>1. 说明:</a></li><li><a href=#2-%E5%AE%89%E8%A3%85subversion>2. 安装subversion</a></li><li><a href=#3-%E5%88%9B%E5%BB%BA%E7%89%88%E6%9C%AC%E5%BA%93>3. 创建版本库</a></li><li><a href=#4-%E9%85%8D%E7%BD%AEsvnserveconf%E7%89%88%E6%9C%AC%E5%BA%93%E4%BF%A1%E6%81%AF>4. 配置"svnserve.conf"版本库信息</a></li><li><a href=#5-%E9%85%8D%E7%BD%AEpasswd%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF>5. 配置"passwd"用户信息</a></li><li><a href=#6-%E9%85%8D%E7%BD%AEauthz%E7%94%A8%E6%88%B7%E6%8E%88%E6%9D%83>6. 配置"authz"用户授权</a></li><li><a href=#7-%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8svn%E6%9C%8D%E5%8A%A1>7. 设置开机自启动SVN服务</a></li><li><a href=#8-ps>8. PS:</a></li></ul><hr><h1 id=1-说明>1. 说明:</h1><ul><li><p>parmars -svnDir- SVN项目统一存放路径</p><ul><li>例如：/home/svnProjects/</li></ul></li><li><p>parmars -svnDir_Project01- 暂命名为“Project01”的SVN库地址</p><ul><li>例如：/home/svnProjects/svnP1/</li></ul></li><li><p>WARNING 注意代码中的引用到的参数</p></li></ul><hr><h1 id=2-安装subversion>2. 安装subversion</h1><pre tabindex=0><code>sudo apt-get install subversion
+</code></pre><h1 id=3-创建版本库>3. 创建版本库</h1><ul><li><pre tabindex=0><code>sudo mkdir -p -svnDir_Project01-
+</code></pre></li><li><pre tabindex=0><code>sudo svnadmin create -svnDir_Project01-
+</code></pre></li></ul><h1 id=4-配置svnserveconf版本库信息>4. 配置"svnserve.conf"版本库信息</h1><ul><li><pre tabindex=0><code>sudo vi -svnDir_Project01-/conf/svnserve.conf
+</code></pre></li><li><p>将以下参数注释掉</p><pre tabindex=0><code>[general]
+anon-access = none #匿名访问权限，默认read，none为不允许访问
+auth-access = write #认证用户权限
+password-db = passwd #用户信息，默认在版本库/conf下面,如需更改请填写文件绝对路径
+authz-db = authz
+</code></pre></li></ul><h1 id=5-配置passwd用户信息>5. 配置"passwd"用户信息</h1><ul><li><pre tabindex=0><code>sudo vi -svnDir_Project01-/conf/passwd
+</code></pre></li><li><p>按如下格式添加用户</p><pre tabindex=0><code>[users]
+zhangsan 	= 123
+lisi 		= 123
+wangwu 		= 123
+</code></pre></li></ul><h1 id=6-配置authz用户授权>6. 配置"authz"用户授权</h1><ul><li><pre tabindex=0><code>sudo vi -svnDir_Project01-/conf/authz
+</code></pre></li><li><p>按如下格式修改或添加用户授权信息</p><pre tabindex=0><code>[groups] 				#定义组的用户
+manager = zhangsan
+core_dev = lisi,wangwu
+
+#以此版本库根目录为基准下发权限物理位置为&#34;-svnDir_Project01-&#34;
+[/] 					#manager组用户对根目录有读写权限
+@manager = rw
+
+[/dev] 					#core_dev对dev子目录为读写权限
+@core_dev = rw
+</code></pre></li></ul><h1 id=7-设置开机自启动svn服务>7. 设置开机自启动SVN服务</h1><ul><li><p>进入"/etc/init.d/&ldquo;目录</p><pre tabindex=0><code>cd /etc/init.d/
+</code></pre></li><li><pre tabindex=0><code>sudo vi runSVN .sh
+</code></pre><ul><li><p>输入如下内容 此处为存放所有SVN版本库的目录的绝对地址</p><pre tabindex=0><code>#!/bin/bash
+svnserve -d -r -svnDir-
+</code></pre></li><li><p>保存退出并修改权限</p><pre tabindex=0><code>sudo chmod 777 runSVN.sh
+</code></pre><pre tabindex=0><code>sudo update-rc.d runSVN.sh defaults
+</code></pre></li></ul></li></ul><hr><h1 id=8-ps>8. PS:</h1><ul><li><p>根据网上资料亲测整理，最终解释权归<a href=http://www.wmyeah.com>WMYeah</a>所有!</p></li><li><p>参考资料:</p><ul><li>1、<a href=http://svnbook.red-bean.com/nightly/en/svn.intro.quickstart.html>High-Speed Tutorial Appendix A. Subversion Quick-Start Guide</a></li><li>2、<a href=http://www.cnblogs.com/bcsflilong/p/4231252.html>ubuntu 14.04 下搭建SVN服务器 svn://</a></li><li>2、<a href=http://www.codesec.net/view/146860.html>Ubuntu 14.0.4系统下SVN的安装与配置</a></li></ul></li></ul><hr><h4><a href=https://www.wmyeah.com>返回首页</a></h4></div></div><footer class=container><hr class=soften><p><a href=https://gitlab.com/maxlefou/hugo.386>hugo.386 theme by Max le Fou</a> |
+&copy;
+<a href=http://www.wmyeah.com target=_blank>WMYeah</a>
+<span id=thisyear>2023</span>
+| Example site
+| 构建于 <a href=//gohugo.io target=_blank>Hugo</a></p><p class=text-center></p></footer></body><link rel=stylesheet href=/css/bootstrap.css><link rel=stylesheet href=/css/bootstrap-responsive.css><link rel=stylesheet href=/css/style.css><script src=/js/jquery.js></script>
+<script src=/js/bootstrap-386.js></script>
+<script src=/js/bootstrap-transition.js></script>
+<script src=/js/bootstrap-alert.js></script>
+<script src=/js/bootstrap-modal.js></script>
+<script src=/js/bootstrap-dropdown.js></script>
+<script src=/js/bootstrap-scrollspy.js></script>
+<script src=/js/bootstrap-tab.js></script>
+<script src=/js/bootstrap-tooltip.js></script>
+<script src=/js/bootstrap-popover.js></script>
+<script src=/js/bootstrap-button.js></script>
+<script src=/js/bootstrap-collapse.js></script>
+<script src=/js/bootstrap-carousel.js></script>
+<script src=/js/bootstrap-typeahead.js></script>
+<script src=/js/bootstrap-affix.js></script>
+<script>_386={fastLoad:!0,onePass:!0,speedFactor:.5};function ThisYear(){document.getElementById("thisyear").innerHTML=(new Date).getFullYear()}</script></html>

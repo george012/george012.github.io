@@ -1,0 +1,32 @@
+<!doctype html><html lang=cn><head><title>WMYeah</title><meta charset=utf-8><meta content="utf-8" http-equiv=encoding><meta name=viewport content="width=device-width,initial-scale=1"><meta name=format-detection content="telephone=no"><meta name=theme-color content="#000084"><link rel=icon href=https://www.wmyeah.com/favicon.ico><link rel=canonical href=https://www.wmyeah.com></head><body><nav class="navbar navbar-inverse navbar-fixed-top"><div class=navbar-inner><div class=container><button type=button class="btn btn-navbar" data-toggle=collapse data-target=.nav-collapse></button>
+<a class=brand href=https://www.wmyeah.com>WMYeah</a><div class="nav-collapse collapse"><ul class=nav><li><a href=/about/><span>about</span></a></li><li><a href=/posts/><span>posts</span></a></li></ul></div></div></div></nav><div id=content class=container><div class="row-fluid navmargin"><div class=page-header><h1>Ubuntu 14.0.4 配置静态IP - Sat, Apr 18, 2015</h1></div><p class=lead></p><p>目录：</p><ul><li><a href=#1-%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E>1. 参数说明</a></li><li><a href=#2-%E7%BC%96%E8%BE%91etcnetworkinterfaces%E6%96%87%E4%BB%B6>2. 编辑"/etc/network/interfaces"文件</a></li><li><a href=#3-%E7%BC%96%E8%BE%91etcresolvconfresolvconfdbase%E6%96%87%E4%BB%B6>3. 编辑"/etc/resolvconf/resolv.conf.d/base"文件</a></li><li><a href=#4-%E9%87%8D%E5%90%AFnetworking%E6%9C%8D%E5%8A%A1%E4%BD%BF%E5%85%B6%E7%94%9F%E6%95%88>4. 重启networking服务使其生效：</a></li><li><a href=#5-ps>5. PS:</a></li></ul><hr><h1 id=1-参数说明>1. 参数说明</h1><ul><li>本例以192.168.1.0(255.255.255.0)网段为例</li></ul><hr><h1 id=2-编辑etcnetworkinterfaces文件>2. 编辑"/etc/network/interfaces"文件</h1><ul><li><pre tabindex=0><code>sudo vi /etc/network/interfaces
+</code></pre></li><li><p>新增如下内容</p><pre tabindex=0><code>auto eth0
+iface eth0 inet static
+address 192.168.1.88
+netmask 255.255.255.0
+gateway 192.168.1.1
+</code></pre></li></ul><h1 id=3-编辑etcresolvconfresolvconfdbase文件>3. 编辑"/etc/resolvconf/resolv.conf.d/base"文件</h1><ul><li><pre tabindex=0><code>sudo vi /etc/resolvconf/resolv.conf.d/base
+</code></pre></li><li><p>输入如下内容</p><pre tabindex=0><code>nameserver 192.168.1.1
+nameserver 8.8.8.8
+</code></pre></li></ul><h1 id=4-重启networking服务使其生效>4. 重启networking服务使其生效：</h1><pre tabindex=0><code>/etc/init.d/networking restart
+</code></pre><hr><h1 id=5-ps>5. PS:</h1><ul><li><p>根据网上资料亲测整理，最终解释权归<a href=http://www.wmyeah.com>WMYeah</a>所有!</p></li><li><p>参考资料:</p><ul><li>1、<a href=http://jingyan.baidu.com/article/1612d500a0348ee20e1eee0d.html>ubuntu 14.10系统怎么设置静态ip？</a></li><li>2、<a href=http://blog.csdn.net/ichsonx/article/details/40040935>Ubuntu Server 12.04(14.04) 静态IP简洁配置</a></li></ul></li></ul><hr><h4><a href=https://www.wmyeah.com>返回首页</a></h4></div></div><footer class=container><hr class=soften><p><a href=https://gitlab.com/maxlefou/hugo.386>hugo.386 theme by Max le Fou</a> |
+&copy;
+<a href=http://www.wmyeah.com target=_blank>WMYeah</a>
+<span id=thisyear>2023</span>
+| Example site
+| 构建于 <a href=//gohugo.io target=_blank>Hugo</a></p><p class=text-center></p></footer></body><link rel=stylesheet href=/css/bootstrap.css><link rel=stylesheet href=/css/bootstrap-responsive.css><link rel=stylesheet href=/css/style.css><script src=/js/jquery.js></script>
+<script src=/js/bootstrap-386.js></script>
+<script src=/js/bootstrap-transition.js></script>
+<script src=/js/bootstrap-alert.js></script>
+<script src=/js/bootstrap-modal.js></script>
+<script src=/js/bootstrap-dropdown.js></script>
+<script src=/js/bootstrap-scrollspy.js></script>
+<script src=/js/bootstrap-tab.js></script>
+<script src=/js/bootstrap-tooltip.js></script>
+<script src=/js/bootstrap-popover.js></script>
+<script src=/js/bootstrap-button.js></script>
+<script src=/js/bootstrap-collapse.js></script>
+<script src=/js/bootstrap-carousel.js></script>
+<script src=/js/bootstrap-typeahead.js></script>
+<script src=/js/bootstrap-affix.js></script>
+<script>_386={fastLoad:!0,onePass:!0,speedFactor:.5};function ThisYear(){document.getElementById("thisyear").innerHTML=(new Date).getFullYear()}</script></html>
