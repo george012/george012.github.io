@@ -35,7 +35,9 @@ jobs:
           extended: true
           
       - name: Build 🔧 
-        run: hugo --minify
+        run: |
+          git submodule update --init \
+          && hugo --minify
 
       - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v3
