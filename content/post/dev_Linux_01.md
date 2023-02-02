@@ -10,8 +10,8 @@ categories: [Linux]
 
 - [mcryp模块安装](#mcryp模块安装)
 - [mcrypt模块加载](#mcrypt模块加载)
-    - [1. 开启mcrypt模块](#1-开启mcrypt模块)
-    - [2. 查看apache2 配置文件](#2-查看apache2-配置文件)
+  - [1. 开启mcrypt模块](#1-开启mcrypt模块)
+  - [2. 查看apache2 配置文件](#2-查看apache2-配置文件)
 - [重启apache2](#重启apache2)
 - [PS:](#ps)
 

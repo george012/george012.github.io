@@ -1,0 +1,20 @@
+[home]
+other = "首页"
+
+[posts]
+other = "分类"
+
+[postslist]
+other = "文章列表"
+
+[categories]
+other = "分类"
+
+[tags]
+other = "标签"
+
+[backtohome]
+other = "返回首页"
+
+[builton]
+other = "构建于"

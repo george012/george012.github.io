@@ -1,3 +1,3 @@
-[submodule "themes/fuji"]
-	path = themes/fuji
-	url = https://github.com/dsrkafuu/hugo-theme-fuji.git
+[submodule "themes/hugo.386"]
+	path = themes/hugo.386
+	url = https://gitlab.com/maxlefou/hugo.386

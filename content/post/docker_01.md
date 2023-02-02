@@ -7,13 +7,13 @@ categories: [Docker]
 
 <!-- TOC -->
 
-- [卸载旧版 Docker](#%E5%8D%B8%E8%BD%BD%E6%97%A7%E7%89%88-docker)
-- [安装相关工具包](#%E5%AE%89%E8%A3%85%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%8C%85)
-- [安装Docker源](#%E5%AE%89%E8%A3%85docker%E6%BA%90)
-- [阿里云](#%E9%98%BF%E9%87%8C%E4%BA%91)
-- [更新 yum 缓存并且安装](#%E6%9B%B4%E6%96%B0-yum-%E7%BC%93%E5%AD%98%E5%B9%B6%E4%B8%94%E5%AE%89%E8%A3%85)
-- [启动 Docker 并且设置开机自启](#%E5%90%AF%E5%8A%A8-docker-%E5%B9%B6%E4%B8%94%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF)
-- [查看 Docker 版本](#%E6%9F%A5%E7%9C%8B-docker-%E7%89%88%E6%9C%AC)
+- [卸载旧版 `Docker`](#卸载旧版-docker)
+- [安装相关工具包](#安装相关工具包)
+- [安装`Docker`源](#安装docker源)
+- [阿里云](#阿里云)
+- [更新 `yum` 缓存并且安装](#更新-yum-缓存并且安装)
+- [启动 `Docker` 并且设置开机自启](#启动-docker-并且设置开机自启)
+- [查看 `Docker` 版本](#查看-docker-版本)
 - [PS:](#ps)
 
 <!-- /TOC -->

@@ -1,84 +1,40 @@
 baseURL: https://www.wmyeah.com
 title: WMYeah
-theme: fuji
-hasCJKLanguage: true
-enableEmoji: true
-enableRobotsTXT: true
-disableKinds:
-  - taxonomy
-ignoreErrors:
-  - error-disable-taxonomy
 languageCode: en
-defaultContentLanguage: en
-summaryLength: 100
-paginate: 10
-outputFormats:
-  SearchIndex:
-    isPlainText: true
-    notAlternative: true
-    mediaType: application/json
-    path: /search/
-outputs:
-  home:
-    - HTML
-    - SearchIndex
-    
-permalinks:
-  post: /:section/:filename/
-params:
-  author: WMYeah
-  subTitle: Buid Dream
-  defaultTheme: auto
-  mainSections:
-    - posts
-  # sourceURL: https://github.com/dsrkafuu/hugo-theme-fuji
-  showWordCounter: true
-  showReadTime: false
-  hideNoTagList: false
-  showLicenseInFooter: false
-  showLicense: true
-  showToc: true
-  copyrightStartYear: "2020"
-  description: A minimal Hugo theme with nice theme color.
-  og: /img/og.png
+DefaultContentLanguage: cn
+preserveTaxonomyNames: true
+theme: hugo.386
 
-  # license: CC BY-NC-SA 4.0
-  # licenseLink: http://creativecommons.org/licenses/by-nc-sa/4.0/
-  lazyPlaceholder: /assets/lazyload/dsrca_loading_480x270.svg
-  lazyPlaceholderRow: /assets/lazyload/dsrca_loading_960x270.svg
-  lazyPlaceholderCol: /assets/lazyload/dsrca_loading_480x540.svg
-markup:
-  goldmark:
-    renderer:
-      unsafe: true
-  highlight:
-    codeFences: false
-  tableOfContents:
-    startLevel: 2
-    endLevel: 7
-taxonomies:
-  tag: tags
+params:
+  mainpagetitle: WMYeah
+  mainpagesubtitle: Buid Your Dream
+  mainpagedesc: This theme is the Hugo port of the BOOTSTRA.386 theme for a cool
+    retro look on your blog. Check the links below to access the posts.
+
+  showhugo: true
+  copyright:
+      name: WMYeah
+      url: http://www.wmyeah.com
+      prefix: "[hugo.386 theme by Max le Fou](https://gitlab.com/maxlefou/hugo.386)"
+      suffix: Example site
+  
+  loadfastload: true
+  loadspeedfactor: 0.5
+  loadonepass: true
+
 
 menu:
-  nav:
-    - name: Home
-      url: /
-      weight: 1
-    - name: Archives
-      url: /archives/
-      weight: 2
-    - name: About
-      url: /about
-      weight: 3
-    - name: Search
-      url: /search/
-      weight: 4
+  main:
+    - identifier: posts
+      name: posts
+      url: /posts/
+      weight: 20
+    - identifier: about
+      name: about
+      url: /about/
+      weight: 10
 
-  link:
-    - name: GitHub
-      url: https://github.com/george012
-      weight: 1
-build:
-  noJSConfigInAssets: true
-security:
-  enableInlineShortcodes: true
+
+taxonomies:
+  category: categories
+  tag: tags
