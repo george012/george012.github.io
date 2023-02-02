@@ -78,3 +78,5 @@ yarn-error.log
 .hugo_build.lock
 
 .idea
+
+themes/*
