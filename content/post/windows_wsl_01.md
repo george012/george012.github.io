@@ -1,5 +1,5 @@
 ---
-title: Ubuntu Server 18.0.4.4 KVM 虚拟化搭建
+title: Windows WSL2 Ubuntu20.04开启systemctl服务
 date: 2022-04-02
 tags: [Windows,WSL]
 categories: [Windows,WSL]
