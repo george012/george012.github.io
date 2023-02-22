@@ -11,7 +11,7 @@ categories: [Golang]
 - [1. 在`Windows`安装](#1-在windows安装)
   - [1.1. 在`Windows`下`WSL2 Ubuntu20.0.4`](#11-在windows下wsl2-ubuntu2004)
 - [2. 在`Linux`安装](#2-在linux安装)
-  - [在`Ubuntu`中](#在ubuntu中)
+  - [2.1. 在`Ubuntu`中](#21-在ubuntu中)
 - [3. PS:](#3-ps)
 
 <!-- /TOC -->
@@ -25,7 +25,7 @@ categories: [Golang]
 
 # 2. 在`Linux`安装
 
-## 在`Ubuntu`中
+## 2.1. 在`Ubuntu`中
     ```
 sudo add-apt-repository ppa:longsleep/golang-backports 
 sudo apt-get install golang-go
