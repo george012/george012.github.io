@@ -1,0 +1,42 @@
+<!doctype html><html lang=cn><head><title>WMYeah</title><meta charset=utf-8><meta content="utf-8" http-equiv=encoding><meta name=viewport content="width=device-width,initial-scale=1"><meta name=format-detection content="telephone=no"><meta name=theme-color content="#000084"><link rel=icon href=https://www.wmyeah.com/favicon.ico><link rel=canonical href=https://www.wmyeah.com></head><body><nav class="navbar navbar-inverse navbar-fixed-top"><div class=navbar-inner><div class=container><button type=button class="btn btn-navbar" data-toggle=collapse data-target=.nav-collapse></button>
+<a class=brand href=https://www.wmyeah.com>WMYeah</a><div class="nav-collapse collapse"><ul class=nav><li><a href=/about/><span>about</span></a></li><li><a href=/posts/><span>posts</span></a></li></ul></div></div></div></nav><div id=content class=container><div class="row-fluid navmargin"><div class=page-header><h1>Golang--安装篇 - Wed, Feb 1, 2023</h1></div><p class=lead></p><p>目录：</p><ul><li><a href=#1-%E5%9C%A8windows%E5%AE%89%E8%A3%85>1. 在<code>Windows</code>安装</a><ul><li><a href=#11-%E5%9C%A8windows%E4%B8%8Bwsl2-ubuntu2004>1.1. 在<code>Windows</code>下<code>WSL2 Ubuntu20.0.4</code></a></li></ul></li><li><a href=#2-%E5%9C%A8linux%E5%AE%89%E8%A3%85>2. 在<code>Linux</code>安装</a><ul><li><a href=#%E5%9C%A8ubuntu%E4%B8%AD>在<code>Ubuntu</code>中</a></li></ul></li><li><a href=#3-ps>3. PS:</a></li></ul><h1 id=1-在windows安装>1. 在<code>Windows</code>安装</h1><pre tabindex=0><code></code></pre><h2 id=11-在windows下wsl2-ubuntu2004>1.1. 在<code>Windows</code>下<code>WSL2 Ubuntu20.0.4</code></h2><ul><li>同<code>Linux Ubuntu</code>安装方式&mdash;-</li></ul><h1 id=2-在linux安装>2. 在<code>Linux</code>安装</h1><h2 id=在ubuntu中>在<code>Ubuntu</code>中</h2><pre><code>```
+</code></pre><p>sudo add-apt-repository ppa:longsleep/golang-backports
+sudo apt-get install golang-go</p><pre tabindex=0><code>
+*   如果要安装指定版本
+    ```
+    sudo apt-get install golang-1.17-go
+    ```
+
+*   如果add-apt-repository不存在，通过以下命令安装进行按照：
+    ```
+    sudo apt-get install software-properties-common
+    sudo apt-get update
+    ```
+
+# 3. PS:
+* 此操作基于（root）权限操作，如用普通用户可在命令行前加“sudo”
+* 根据网上资料亲测整理，最终解释权归[WMYeah][1]所有!
+------
+
+[1]:http://www.wmyeah.com
+</code></pre><h4><a href=https://www.wmyeah.com>返回首页</a></h4></div></div><footer class=container><hr class=soften><p><a href=https://gitlab.com/maxlefou/hugo.386>hugo.386 theme by Max le Fou</a> |
+&copy;
+<a href=http://www.wmyeah.com target=_blank>WMYeah</a>
+<span id=thisyear>2023</span>
+| Example site
+| 构建于 <a href=//gohugo.io target=_blank>Hugo</a></p><p class=text-center></p></footer></body><link rel=stylesheet href=/css/bootstrap.css><link rel=stylesheet href=/css/bootstrap-responsive.css><link rel=stylesheet href=/css/style.css><script src=/js/jquery.js></script>
+<script src=/js/bootstrap-386.js></script>
+<script src=/js/bootstrap-transition.js></script>
+<script src=/js/bootstrap-alert.js></script>
+<script src=/js/bootstrap-modal.js></script>
+<script src=/js/bootstrap-dropdown.js></script>
+<script src=/js/bootstrap-scrollspy.js></script>
+<script src=/js/bootstrap-tab.js></script>
+<script src=/js/bootstrap-tooltip.js></script>
+<script src=/js/bootstrap-popover.js></script>
+<script src=/js/bootstrap-button.js></script>
+<script src=/js/bootstrap-collapse.js></script>
+<script src=/js/bootstrap-carousel.js></script>
+<script src=/js/bootstrap-typeahead.js></script>
+<script src=/js/bootstrap-affix.js></script>
+<script>_386={fastLoad:!0,onePass:!0,speedFactor:.5};function ThisYear(){document.getElementById("thisyear").innerHTML=(new Date).getFullYear()}</script></html>
