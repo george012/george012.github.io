@@ -13,7 +13,8 @@ categories: [Git]
 - [2. 清除缓存 记得 带“.”](#2-清除缓存-记得-带)
 - [3. 将变化提交到暂存区](#3-将变化提交到暂存区)
 - [4. 提交并填写相关信息](#4-提交并填写相关信息)
-- [5. 可选同步到远程分支](#5-可选同步到远程分支)
+- [5. <font color=red>可选</font>同步到远程分支](#5-font-colorred可选font同步到远程分支)
+- [获取最新的tag](#获取最新的tag)
 
 <!-- /TOC -->
 
@@ -48,6 +49,11 @@ git push
 或者
 
 git push origin master
+```
+
+# 获取最新的tag
+```
+git describe --tags --exact-match --abbrev=0
 ```
 
 ------
