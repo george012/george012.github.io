@@ -10,10 +10,11 @@ categories: [Linux]
 <!-- TOC -->
 
 - [1. 修改apt源为阿里云](#1-修改apt源为阿里云)
-  - [1.1. 备份系统自带源](#11-备份系统自带源)
-  - [1.2. 修改源为阿里云](#12-修改源为阿里云)
-  - [1.3. 更新apt](#13-更新apt)
-  - [1.4. 关闭SNAP自动更新](#14-关闭snap自动更新)
+    - [1.1. 备份系统自带源](#11-备份系统自带源)
+    - [1.2. 修改源为阿里云](#12-修改源为阿里云)
+    - [1.3. 更新apt](#13-更新apt)
+    - [1.4. 关闭SNAP自动更新](#14-关闭snap自动更新)
+    - [关闭防火墙](#关闭防火墙)
 - [2. PS:](#2-ps)
 
 <!-- /TOC -->
@@ -63,6 +64,9 @@ systemctl stop {snapd,snapd.socket,snapd.refresh.timer}
 vim /etc/apt/apt.conf.d/20auto-upgrades
 # 将1 改为0 
 ```
+
+## 关闭防火墙
+systemctl disable ufw
 
 ------
 
