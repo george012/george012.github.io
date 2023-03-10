@@ -16,9 +16,12 @@ categories: [Linux,Net]
 
 # 1. 查看`443`的`TCP`连接数
 ```
- lsof -i:443 | grep ESTABLISHED | grep TCP | wc -l
+netstat -anp | grep :443 | grep ESTABLISHED | wc -l
 ```
-
+或者
+```
+lsof -i:443 | grep ESTABLISHED | grep TCP | wc -l
+```
 
 # 2. PS:
 * 根据网上资料亲测整理，最终解释权归[WMYeah][1]所有!
