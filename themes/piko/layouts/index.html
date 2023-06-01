@@ -86,7 +86,7 @@ url('{{.Site.Params.homepage.heroBackgroundImage}}'); ">
           layout="intrinsic"
         ></img>
       </div>
-      <div class="container">
+      <div class="container" style="white-space: pre-wrap;">
         {{.Site.Params.homepage.aboutContent}}
       </div>
     </div>
@@ -103,7 +103,7 @@ url('{{.Site.Params.homepage.heroBackgroundImage}}'); ">
   <div class="container">
     <div class="grid grid-post">
       {{ range .Site.Params.homepage.portfolio }}
-      <a class="portfolio-post" href="{{.websiteUrl}}">
+      <a class="portfolio-post" href="{{.websiteUrl}}" target="_blank">
         <figure >
           <img
             src="{{.imageUrl}}"

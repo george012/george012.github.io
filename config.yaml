@@ -60,7 +60,7 @@ params:
   CookieLink: /legal/privacy/#cookies-and-web-beacons
   CookieButton: Cookies Policy
   disableAnchoredHeadings: false
-  contactFormAction: # Get link from https://formsubmit.io or https://fabform.io
+  contactFormAction: https://formsubmit.io/send/7ff640f5-d625-4ab4-a4b5-84e9c1c3f705 # Get link from https://formsubmit.io or https://fabform.io
   assets:
     disableFingerprinting: false
     favicon: /uploads/zap.svg
@@ -89,26 +89,38 @@ params:
     # About Section    
     disableAboutSection: false
     aboutTitle: About
-    aboutDescription: Just something about me
+    aboutDescription: Just Me
     aboutImgUrl: "/uploads/self.webp"
-    aboutContent: Hi guys. This is where you put something about yourself.
+    aboutContent: |
+      白日依山尽，
+      The bright sun leans on the mountains at dusk,
+      黄河入海流。
+      The Yellow River flows into the sea.
+      欲穷千里目，
+      If you yearn to gaze as far as the thousand-mile horizon,
+      更上一层楼。
+      Climb one more story.
     # Portfolio Section
     disablePortfolioSection: false
-    portfolioTitle: Portfolio
-    portfolioDescription: Some of my works
+    portfolioTitle: Cases
+    portfolioDescription: a some ....
     portfolio:
-    - imageUrl: /uploads/portfolio-1.webp
-      alt: # image alt for better SEO
-      description: Portfolio One.
-      websiteUrl: #
-    - imageUrl: /uploads/portfolio-2.webp
-      alt: # image alt for better SEO
-      description: Portfolio Two.
-      websiteUrl: #
-    - imageUrl: /uploads/portfolio-3.webp
-      alt: # image alt for better SEO
-      description: Portfolio Three.
-      websiteUrl: #
+    - imageUrl: https://github-readme-stats.vercel.app/api/pin/?username=george012&repo=gtbox&title_color=fff00&icon_color=f9f9f9&text_color=9f9f9f&bg_color=151515
+      alt: Custom Go Application Develop Tools  # image alt for better SEO
+      description: Custom Go Application Develop Tools.
+      websiteUrl: https://github.com/george012/gtbox
+    - imageUrl: https://github-readme-stats.vercel.app/api/pin/?username=george012&repo=one_key_install_core-geth&title_color=fff00&icon_color=f8f8f8&text_color=9f9f9f&bg_color=151515
+      alt: One-click installation of core-geth  # image alt for better SEO
+      description: One-click installation of core-geth.
+      websiteUrl: https://github.com/george012/one_key_install_core-geth
+    - imageUrl: https://github-readme-stats.vercel.app/api/pin/?username=george012&repo=libhv-build&title_color=fff00&icon_color=f8f8f8&text_color=9f9f9f&bg_color=151515
+      alt: Auto Buid libhv  # image alt for better SEO
+      description: Auto Buid libhv.
+      websiteUrl: https://github.com/george012/gt_script
+    - imageUrl: https://github-readme-stats.vercel.app/api/pin/?username=george012&repo=gt_script&title_color=fff00&icon_color=f8f8f8&text_color=9f9f9f&bg_color=151515
+      alt: Commonly used Shell scripts  # image alt for better SEO
+      description: Commonly used Shell scripts.
+      websiteUrl: https://github.com/george012/gt_script
   # Search Options (https://fusejs.io/)
   fuseOpts:
     isCaseSensitive: false
