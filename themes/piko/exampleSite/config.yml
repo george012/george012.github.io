@@ -1,11 +1,11 @@
 ---
-baseURL: https://www.wmyeah.com
+baseURL: https://piko-heksagon.netlify.app/
 languageCode: en-us
-title: WMYeah
+title: Piko
 theme: piko
-paginate: "20"
+paginate: "9"
 copyright: A template by [Heksagon](https://www.heksagon.net "Your most friendly developer")
-googleAnalytics: "G-RDBNJJYEQ4" # Enter Google Analytics ie. UA-012345678-9
+googleAnalytics: # Enter Google Analytics ie. UA-012345678-9
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
@@ -37,13 +37,13 @@ params:
     bing:
       SiteVerificationTag: # Bing Site Verification
   env: production
-  author: WMYeah
-  description: Build Dream
+  author: Your Name
+  description: Your website description
   math: false
   images:
   - "/uploads/og.webp"
   label:
-    title: _WMYeah_
+    title: _Piko Title_
     text: Welcome to Piko
     lightNavIcon: /uploads/sun.svg
     darkNavIcon: /uploads/zap.svg
@@ -74,8 +74,8 @@ params:
     # Hero Section
     disableHeroSection: false
     heroUpperTitle: 
-    heroTitle: Run Dream
-    heroDescription: Let's chase our dreams together
+    heroTitle: Piko
+    heroDescription: Lightweight theme for your every need
     heroCTAPrimaryText: Blog
     heroCTAPrimaryUrl: "/blog/"
     heroCTASecondaryText: Contact Me
@@ -134,12 +134,6 @@ menus:
     pre: pen-tool
     url: "/blog"
     weight: "20"
-  - name: Categories
-    title: Categories
-    pre: pen-tool
-    pre: categories
-    url: "/categories"
-    weight: "20"
   - name: Search
     title: Search
     pre: search
@@ -153,7 +147,7 @@ menus:
   - name: Github
     title: 
     pre: github
-    url: https://github.com/george012
+    url: https://github.com/heksagonnet/piko
     weight: "50"
   search: # Search page's quick links
   - name: Categories
