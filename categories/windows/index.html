@@ -1,22 +1,22 @@
-<!doctype html><html lang=cn><head><title>WMYeah</title><meta charset=utf-8><meta content="utf-8" http-equiv=encoding><meta name=viewport content="width=device-width,initial-scale=1"><meta name=format-detection content="telephone=no"><meta name=theme-color content="#000084"><link rel=icon href=https://www.wmyeah.com/favicon.ico><link rel=canonical href=https://www.wmyeah.com></head><body><nav class="navbar navbar-inverse navbar-fixed-top"><div class=navbar-inner><div class=container><button type=button class="btn btn-navbar" data-toggle=collapse data-target=.nav-collapse></button>
-<a class=brand href=https://www.wmyeah.com>WMYeah</a><div class="nav-collapse collapse"><ul class=nav><li><a href=/about/><span>about</span></a></li><li><a href=/posts/><span>posts</span></a></li></ul></div></div></div></nav><div id=content class=container><article class="row-fluid navmargin"><header class=page-header><h1>Windows</h1></header></article><ul><li><a href=/post/windows_msys2_01/>2023-02-02 | Windows msys2 环境集锦</a></li><li><a href=/post/windows_wsl_01/>2022-04-02 | Windows WSL2 Ubuntu20.04开启systemctl服务</a></li></ul></div><footer class=container><hr class=soften><p><a href=https://gitlab.com/maxlefou/hugo.386>hugo.386 theme by Max le Fou</a> |
-&copy;
-<a href=http://www.wmyeah.com target=_blank>WMYeah</a>
-<span id=thisyear>2023</span>
-| Example site
-| 构建于 <a href=//gohugo.io target=_blank>Hugo</a></p><p class=text-center></p></footer></body><link rel=stylesheet href=/css/bootstrap.css><link rel=stylesheet href=/css/bootstrap-responsive.css><link rel=stylesheet href=/css/style.css><script src=/js/jquery.js></script>
-<script src=/js/bootstrap-386.js></script>
-<script src=/js/bootstrap-transition.js></script>
-<script src=/js/bootstrap-alert.js></script>
-<script src=/js/bootstrap-modal.js></script>
-<script src=/js/bootstrap-dropdown.js></script>
-<script src=/js/bootstrap-scrollspy.js></script>
-<script src=/js/bootstrap-tab.js></script>
-<script src=/js/bootstrap-tooltip.js></script>
-<script src=/js/bootstrap-popover.js></script>
-<script src=/js/bootstrap-button.js></script>
-<script src=/js/bootstrap-collapse.js></script>
-<script src=/js/bootstrap-carousel.js></script>
-<script src=/js/bootstrap-typeahead.js></script>
-<script src=/js/bootstrap-affix.js></script>
-<script>_386={fastLoad:!0,onePass:!0,speedFactor:.5};function ThisYear(){document.getElementById("thisyear").innerHTML=(new Date).getFullYear()}</script></html>
+<!doctype html><html lang=en-us><head><meta charset=utf-8><title>Windows | WMYeah</title><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Build Dream"><meta name=author content="WMYeah"><link rel=canonical href=https://www.wmyeah.com/categories/windows/><link rel=stylesheet href=https://www.wmyeah.com/sass/main.min.css><link rel=stylesheet href=https://www.wmyeah.com/sass/nav.min.css><link rel=stylesheet href=https://www.wmyeah.com/plugins/css/pico.min.css><link rel=icon href=https://www.wmyeah.com/uploads/zap.svg><link rel=icon type=image/png sizes=16x16 href=https://www.wmyeah.com/uploads/zap.svg><link rel=icon type=image/png sizes=32x32 href=https://www.wmyeah.com/uploads/zap.svg><link rel=apple-touch-icon href=https://www.wmyeah.com/uploads/zap.svg><link rel=mask-icon href=https://www.wmyeah.com/uploads/zap.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><meta name=generator content="Hugo 0.112.5"><link rel=alternate type=application/rss+xml href=https://www.wmyeah.com/categories/windows/index.xml><script async src="https://www.googletagmanager.com/gtag/js?id=G-RDBNJJYEQ4"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-RDBNJJYEQ4",{anonymize_ip:!1})}</script><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://www.wmyeah.com/uploads/og.webp"><meta name=twitter:title content="Windows"><meta name=twitter:description content="Build Dream"><meta property="og:title" content="Windows"><meta property="og:description" content="Build Dream"><meta property="og:type" content="website"><meta property="og:url" content="https://www.wmyeah.com/categories/windows/"><meta property="og:image" content="https://www.wmyeah.com/uploads/og.webp"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://www.wmyeah.com/uploads/og.webp"><meta name=twitter:title content="Windows"><meta name=twitter:description content="Build Dream"></head><body><nav class=desktop><ul><li><a class=logo href=https://www.wmyeah.com accesskey=h title="Welcome to Piko (Alt + h)"><img id=lightMainIcon src=/uploads/sun.svg alt="Welcome to Piko" width=35 height=35></img>
+<img id=darkMainIcon src=/uploads/zap.svg alt="Welcome to Piko" width=35 height=35></img><h3 style=margin-bottom:0><strong><em>WMYeah</em></strong></h3></a></li><li class=toggle-container><input type=checkbox id=switch>
+<label for=switch><i id=darkIcon data-feather=moon></i>
+<i id=lightIcon data-feather=sun></i></label></li></ul><ul class=desktop-navigation><li><a href=/blog title=Blog><i data-feather=pen-tool></i>
+<span>Blog</span></a></li><li><a href=/categories title=Categories><i data-feather=categories></i>
+<span>Categories</span></a></li><li><a href=/search title=Search><i data-feather=search></i>
+<span>Search</span></a></li><li><a href=/contact title=Contact><i data-feather=mail></i>
+<span>Contact</span></a></li><li><a href=https://github.com/george012 title=Github><i data-feather=github></i>
+<span></span></a></li></ul><ul class=mobile-navigation><li><button id=menuOpen onclick=openMobile() aria-label="Menu closed">
+<i data-feather=menu></i></button>
+<button id=menuClose onclick=openMobile() aria-label="Menu opened">
+<i data-feather=x></i></button></li></ul></nav><aside class=sidebar id=mobileNav style=display:none><nav><ul><li><a href=/blog title=Blog><span><i data-feather=pen-tool></i>
+Blog</span></a></li><li><a href=/categories title=Categories><span><i data-feather=categories></i>
+Categories</span></a></li><li><a href=/search title=Search><span><i data-feather=search></i>
+Search</span></a></li><li><a href=/contact title=Contact><span><i data-feather=mail></i>
+Contact</span></a></li><li><a href=https://github.com/george012 title=Github><span><i data-feather=github></i></span></a></li></ul></nav></aside><main><section class=hero style="background-image:linear-gradient(rgba(20,30,38,.9),rgba(24,44,54,.8)),url('')"><header class=container><hgroup><h1>Windows</h1><h2></h2></hgroup></header></section><div class=container><div class="grid grid-post"><a href=/blog/windows_msys2_01/><article class=text-center><hgroup><h3>Windows msys2 环境集锦</h3><hr><p></p></hgroup><small><time datetime='2023-02-02 00:00:00 +0000 UTC'>February 2, 2023</time>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;WMYeah</small></article></a><a href=/blog/windows_wsl_01/><article class=text-center><hgroup><h3>Windows WSL2 Ubuntu20.04开启systemctl服务</h3><hr><p></p></hgroup><small><time datetime='2022-04-02 00:00:00 +0000 UTC'>April 2, 2022</time>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;WMYeah</small></article></a></div><div><div></div></div></div></main><footer class=text-center><span>A template by <a href=https://www.heksagon.net title="Your most friendly developer" target=_blank rel=noopener>Heksagon</a> &copy; 2023 WMYeah</span><div><a href=https://www.wmyeah.com/legal/privacy>Privacy Policy</a>
+<span>&</span>
+<a href=https://www.wmyeah.com/legal/terms-and-conditions>Terms and Conditions</a></div></footer><article class=hidden id=cookie-banner><div><span>We use cookies to improve your experience on our site and to show you relevant advertising.</span></div><footer><a role=button id=consent-cookies>Close</a>
+<a role=button class=secondary href=/legal/privacy/#cookies-and-web-beacons>Cookies Policy</a></footer></article><script async src=https://www.wmyeah.com/js/cookie.min.js layout=container></script>
+<script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script src=https://www.wmyeah.com/plugins/js/feather.min.js layout=container></script>
+<script src=https://www.wmyeah.com/js/script.min.js layout=container></script></body></html>
