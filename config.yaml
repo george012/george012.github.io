@@ -1,7 +1,7 @@
 ---
 baseURL: https://dev.wmyeah.com
 languageCode: en-us
-title: WMYeah
+title: Dev
 theme: piko
 paginate: "20"
 copyright: A template by [Heksagon](https://www.heksagon.net "Your most friendly developer")
@@ -37,13 +37,13 @@ params:
     bing:
       SiteVerificationTag: # Bing Site Verification
   env: production
-  author: WMYeah
+  author: Dev
   description: Build Dream
   math: false
   images:
   - "/uploads/og.webp"
   label:
-    title: _WMYeah_
+    title: _Dev_
     text: Welcome to Piko
     lightNavIcon: /uploads/sun.svg
     darkNavIcon: /uploads/zap.svg
