@@ -121,6 +121,10 @@ params:
       alt: Commonly used Shell scripts  # image alt for better SEO
       description: Commonly used Shell scripts.
       websiteUrl: https://github.com/george012/gt_script
+    - imageUrl: https://github-readme-stats.vercel.app/api/pin/?username=george012&repo=cloudflare-r2-upload&title_color=fff00&icon_color=f8f8f8&text_color=9f9f9f&bg_color=151515
+      alt: Cloudflare R2 Upload Script  # image alt for better SEO
+      description: Cloudflare R2 uses Github Action to upload file scripts.
+      websiteUrl: https://github.com/george012/cloudflare-r2-upload
   # Search Options (https://fusejs.io/)
   fuseOpts:
     isCaseSensitive: false
